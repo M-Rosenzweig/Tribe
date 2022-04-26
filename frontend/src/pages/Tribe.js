@@ -3,7 +3,7 @@ import './Tribe.css'
 
 function Tribe() {
   return (
-    <div>Tribe</div>
+    <div> Welcome to Your Tribe</div>
   )
 }
 
