@@ -4,4 +4,6 @@ class STribe < ApplicationRecord
 
     has_many :bonds
     has_many :users, through: :bonds
+
+    validates :code, uniqueness: true
 end

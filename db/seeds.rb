@@ -10,4 +10,6 @@ Priority.create(text:"Rock MVP for Phase 5 project", user:u1)
 
 Worry.create(text:"Css grid and Flexbox... dont want to screw up front end vibes..", user:u1)
 
+Book.create(title:"The Choice", author:"Edith Eger", user:u1, top_five:true, read:true, current:false)
+
 
