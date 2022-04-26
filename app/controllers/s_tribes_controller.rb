@@ -1,0 +1,2 @@
+class STribesController < ApplicationController
+end
