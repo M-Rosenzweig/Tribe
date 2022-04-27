@@ -8,6 +8,7 @@ import Chat from "./pages/Chat"
 import MyBooks from "./pages/MyBooks"
 import FriendsBooks from "./pages/FriendsBooks"
 import Voting from "./pages/Voting"
+import './App.css'
 import { Route, Routes } from "react-router-dom";
 
 
@@ -21,7 +22,7 @@ function App() {
   // }, []);
 
   return (
-    <div className="App">
+    <div id="AppMain" className="App">
     
      <Nav />
 

@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: 17vw auto;
+  gap:0px;
+  /* border:5 px solid #85be13 */
+}
+
+body{
+  background-image: url(./images/Tribb.jpg);
 }
 
 .App-logo {
