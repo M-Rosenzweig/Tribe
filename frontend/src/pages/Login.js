@@ -33,7 +33,8 @@ function Login() {
         <button id="loginbutton" className='logininput' onClick={handleLogin} >Login</button>
         </div>
         <div id="signup">
-        <p>Dont have an account?</p> <Link to="/signUp"><p id="sarea" >Sign up!</p></Link>
+        <p>Dont have an account?</p> <Link to="/signUp">
+          <p id="sarea" >Sign up!</p></Link>
         </div>
       </div>
      </div>

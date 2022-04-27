@@ -1,3 +1,95 @@
 .SignUpMaster {
     color:white;
+    /* background-image: url(../images/Tribal.jpg) ; */
+    background-image: url(../images/Fire.gif) ;
+
+}
+
+#signupparent {
+    display: flex;
+    /* grid-template-columns: auto; */
+    justify-content: center;
+    height: 100vh;
+    /* background-color: aquamarine; */
+}
+
+.SelectedBox {
+    background-color:rgb(4, 157, 252);
+    color: white;
+}
+
+#SignUpTitle {
+    font-size: 600%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding:0%;
+    /* background-color: aquamarine; */
+}
+
+
+
+#signupbox {
+    margin-top: 5vh;
+    padding-top: 1vh;
+    height: 90vh;
+    width: 50vw;
+    /* background-color: lightgray; */
+}
+
+.SignUpButton{
+    margin-bottom: 4%;
+    padding:2%;
+    width:40%;
+
+}
+
+#signups {
+    display: grid;
+    grid-template-columns: 50vh;
+    /* background-color: black; */
+    grid-template-rows: 10vh 10vh 10vh 10vh;
+    justify-content: center;
+    height: 40%;
+    width: 100%;
+}
+
+.signupinput {
+    margin-bottom: 3.5vh;
+    font-size: 1.3rem;
+    /* border-radius: 25px; */
+    padding: 18px;
+    opacity: 85%;
+}
+#names {
+    display: flex;
+    margin-bottom: 4vh;
+    font-size: 1.3rem;
+    border-radius: 25px;
+    padding: 18px;
+    opacity: 75%;
+    /* grid-template-columns: 12vw 12vw; */
+    /* grid-template-rows: 5vh; */
+    justify-content: center;
+    /* background-color: aquamarine; */
+}
+
+#signupbutton {
+    background-color: green;
+    margin-top: -2%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#login {
+    display: grid;
+    grid-template-columns: 15vw 9vw;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+#larea {
+    font-weight: bold;
+    color: green;
+    margin-left: -7vw;
 }
