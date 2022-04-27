@@ -7,7 +7,12 @@
 }
 
 body{
-  background-image: url(./images/Tribb.jpg);
+  background-image: url(./images/Tribb.jpg); 
+  /* background: linear-gradient(#157BD0, #ADD8FF); */
+  /* font-family: Montserrat, sans-serif; */
+
+   /* background: linear-gradient(#59db6a, #ADD8FF); */
+   /* background: linear-gradient(#1531d0, #ADD8FF); */
 }
 
 .App-logo {

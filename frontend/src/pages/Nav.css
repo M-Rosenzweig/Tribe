@@ -19,9 +19,11 @@
     /* margin-bottom: 20%; */
     font-size: 285%;
     font-family:cursive;
-    margin-bottom: 0;
-    border-bottom-style:solid;
-    border-color: white;
+    margin-bottom: 5%;
+    text-align: start;
+    margin-left: 5%;
+    /* border-bottom-style:solid;
+    border-color: white; */
 }
 
 .NavWelcome{
@@ -32,18 +34,17 @@
 
 .NavOptions {
     font-family: Montserrat, sans-serif;
-
+    text-align: start;
+    margin-left: 5%;
     margin-top: 0%;
     font-size: 118%;
     text-decoration: none;
-    text-decoration-color: none;
-
-    /* flex-wrap: wrap; */
-    
+    text-decoration-color: none; 
 }
 
+
 .Logout{
-    margin-top: 120%;
+    margin-top: 145%;
     font-family: Montserrat, sans-serif;
 }
 

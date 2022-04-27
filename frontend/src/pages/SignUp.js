@@ -4,7 +4,11 @@ import "./SignUp.css"
 
 function SignUp() {
   return (
-    <div>SignUp</div>
+    <div className='SignUpMaster'>
+      
+      SignUp
+
+    </div>
   )
 }
 
