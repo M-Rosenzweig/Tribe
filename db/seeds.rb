@@ -1,4 +1,4 @@
-u1 = User.create(name:'Moish', email:"therosenvibe@gmail.com", password_digest:"", energy:4)
+u1 = User.create!(username:'Moish', email:"therosenvibe@gmail.com", password:"vibes", energy:4)
 
 t1 = STribe.create(name:"Soul", code:rand(10000000..100000000000))
 

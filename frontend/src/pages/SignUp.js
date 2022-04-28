@@ -36,6 +36,7 @@ function handleClickCreate(e) {
 
 function handleUsername(e) {
   setUsername(e.target.value)
+
 }
 
 function handleEmail(e) {
@@ -52,6 +53,36 @@ function handleTribeName(e) {
 
 function handleTribePasscode (e) {
   setTribePasscode(e.target.value)
+}
+
+function handleCreateTribe(e) {
+  e.preventDefault()
+
+  fetch("/new_tribe", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      username: username, 
+      email: email,
+      password:password,
+      energy:2,
+  
+  
+      name: tribeName,
+      code: 123
+    })
+  })
+  .then(resp => resp.json())
+  .then(data => console.log(data))
+}
+
+function handleJoinTribe(e){
+  e.preventDefault()
+  console.log('please join my tribe');
+  // alert('Hello')
+  // setEmail('')
 }
 
 
@@ -74,10 +105,12 @@ function handleTribePasscode (e) {
         {/* on change set the code or handle the name */}
   
         </div>
-        <Link to="/login"><button id="signupbutton" className='signupinput' >{placeholder ? "Create" : "Join Tribe" }</button></Link>
+        {/* <Link to="/login"> */}
+          <button id="signupbutton" className='signupinput' onClick={placeholder ? handleCreateTribe : handleJoinTribe} >{placeholder ? "Create" : "Join Tribe" }</button>
+          {/* </Link> */}
 
         <div id="login">
-        <p>Already have a Tribe?</p><Link to="/login"><p id="larea">Login here!</p></Link>
+        <p className="HaveOne">Already have a Tribe?</p><Link to="/login"><p id="larea">Login here</p></Link>
         </div>
       </div>
     </div>
