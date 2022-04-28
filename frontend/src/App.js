@@ -27,7 +27,8 @@ function App() {
      <Nav />
 
      <Routes>
-     <Route path="/" element={<Tribe />}/>
+     {/* <Route path="/" element={<Tribe />}/> */}
+     <Route path="/" element={<Login />}/>
      <Route path="/login" element={<Login />}/>
      <Route path="/signUp" element={<SignUp />}/>
      <Route path="/myMind" element={<MyMind />}/>

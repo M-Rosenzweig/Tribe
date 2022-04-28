@@ -48,8 +48,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_182947) do
   create_table "priorities", force: :cascade do |t|
     t.string "text"
     t.bigint "user_id", null: false
+    t.bigint "s_tribe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["s_tribe_id"], name: "index_priorities_on_s_tribe_id"
     t.index ["user_id"], name: "index_priorities_on_user_id"
   end
 
@@ -72,8 +74,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_182947) do
   create_table "worries", force: :cascade do |t|
     t.string "text"
     t.bigint "user_id", null: false
+    t.bigint "s_tribe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["s_tribe_id"], name: "index_worries_on_s_tribe_id"
     t.index ["user_id"], name: "index_worries_on_user_id"
   end
 
@@ -82,6 +86,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_182947) do
   add_foreign_key "books", "users"
   add_foreign_key "messages", "s_tribes"
   add_foreign_key "messages", "users"
+  add_foreign_key "priorities", "s_tribes"
   add_foreign_key "priorities", "users"
+  add_foreign_key "worries", "s_tribes"
   add_foreign_key "worries", "users"
 end

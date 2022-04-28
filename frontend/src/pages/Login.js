@@ -20,7 +20,7 @@ function Login() {
     <div className='LoginMaster'>
       <div className='LoginHeadings'> 
         <h1 id='LoginTitle'>Tribe</h1> 
-        <h2 id='LoginSubtitle'>We Are Stronger Together</h2>
+        <h2 id='LoginSubtitle'>Stronger Together</h2>
      </div>
 
      <div className='LoginForm'>
