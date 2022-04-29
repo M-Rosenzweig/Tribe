@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import "./SignUp.css"
 import { Link } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
+
 
   
 function SignUp() {
@@ -16,9 +18,14 @@ const [tribePasscode, setTribePasscode] = useState('')
 
 const [tribeName, setTribeName] = useState('')
 
-function handleFormSubmit() {
-
-}
+// function handleFormSubmit(e) {
+//   console.log("Im hit rob!");
+//   e.preventDefault()
+//   setUsername('')
+//   setEmail('')
+//   setPassword('')
+//   setTribeName('')
+// }
 
 function handleClickCreate(e) {
   e.preventDefault()
@@ -57,6 +64,10 @@ function handleTribePasscode (e) {
 
 function handleCreateTribe(e) {
   e.preventDefault()
+  setUsername('')
+  setEmail('')
+  setPassword('')
+  setTribeName('')
 
   fetch("/new_tribe", {
     method: "POST",
@@ -69,9 +80,9 @@ function handleCreateTribe(e) {
       password:password,
       energy:2,
   
-  
+      //Tribe Info
       name: tribeName,
-      code: 123
+      code: uuidv4()
     })
   })
   .then(resp => resp.json())
@@ -80,16 +91,36 @@ function handleCreateTribe(e) {
 
 function handleJoinTribe(e){
   e.preventDefault()
-  console.log('please join my tribe');
-  // alert('Hello')
-  // setEmail('')
+  setUsername('')
+  setEmail('')
+  setPassword('')
+  setTribeName('')
+
+  fetch("/join_tribe", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      username: username, 
+      email: email,
+      password:password,
+      energy:2,
+
+      // Tribe Info
+      code: tribePasscode
+    })
+  })
+  .then(resp => resp.json())
+  .then(data => console.log(data))
 }
+  // alert('Hello - depending on errors or not send message')
 
 
   return (
     <div className='SignUpMaster'>
       
-  <form onSubmit={handleFormSubmit}>
+  <form onSubmit={placeholder ? handleCreateTribe : handleJoinTribe}>
 
     <div id="signupparent">
       <div id="signupbox">
@@ -106,7 +137,7 @@ function handleJoinTribe(e){
   
         </div>
         {/* <Link to="/login"> */}
-          <button id="signupbutton" className='signupinput' onClick={placeholder ? handleCreateTribe : handleJoinTribe} >{placeholder ? "Create" : "Join Tribe" }</button>
+          <button id="signupbutton" className='signupinput' >{placeholder ? "Create" : "Join Tribe" }</button>
           {/* </Link> */}
 
         <div id="login">

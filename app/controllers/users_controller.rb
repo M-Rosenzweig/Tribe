@@ -7,12 +7,23 @@ class UsersController < ApplicationController
     def new_tribe
         user = User.create!(create_user_params)
         tribe = STribe.create(stribes_params)
+        bond = Bond.create(user:user, s_tribe:tribe)
+        session[:user_id] ||= user.id
+        render json: user, status: :created
+    rescue ActiveRecord::RecordInvalid => invalid
+        render json: { errors: [invalid.record.errors] }, status: :unprocessable_entity
+    end
+
+    def join_tribe
+        user = User.create!(create_user_params)
+        tribe = STribe.find_by(code: params[:code])
         bond = Bond.create(user_id:user.id, s_tribe_id:tribe.id)
         session[:user_id] ||= user.id
         render json: user, status: :created
     rescue ActiveRecord::RecordInvalid => invalid
         render json: { errors: [invalid.record.errors] }, status: :unprocessable_entity
     end
+
 
     def show
         user_id = session[:user_id]

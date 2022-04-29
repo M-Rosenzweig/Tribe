@@ -6,6 +6,7 @@ function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
 
   function setEmailFunction(e) {
     setEmail(e.target.value)
@@ -15,10 +16,65 @@ function Login() {
     setPassword(e.target.value)
   }
 
-  function handleLogin (e) {
+  // function alertVibes(data) {
+  // //  data ?  alert('You are now logged in!') :
+  //   console.log(data);
+  // }
+
+  function handleLogin(e) {
     e.preventDefault()
-    // create the user and take him to the My Tribe Page
+    setEmail('')
+    setPassword('')
+
+    fetch("/sessions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    })
+    .then(resp => {
+      if (resp.ok){
+        return resp.json();
+      }
+      alert('Invalid credentials - try again ')
+    })
+    .then(data => {
+       console.log(data);
+      setName(data.username)
+    })
   }
+
+  // understand the promise and error handling better - Brandon
+  
+  // fetch(url).then((response) => {
+  //   if (response.ok) {
+  //     return response.json();
+  //   }
+  //   throw new Error('Something went wrong');
+  // })
+  // .then((responseJson) => {
+  //   // Do something with the response
+  // })
+  // .catch((error) => {
+  //   console.log(error)
+  // });
+
+//   function handleErrors(response) {
+//     if (!response.ok) {
+//         throw Error(response.statusText);
+//     }
+//     return response;
+// }
+// fetch("http://httpstat.us/500")
+//     .then(handleErrors)
+//     .then(response => console.log("ok") )
+//     .catch(error => console.log(error) );
+
+
 
   return (
     <div className='LoginMaster'>

@@ -15,11 +15,18 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
 
-  // useEffect(() => {
-  //   fetch("/hello")
-  //     .then((r) => r.json())
-  //     .then((data) => setCount(data.count));
-  // }, []);
+  const [user, setUser] = useState({username:""})
+
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((resp) => {
+      if (resp.ok) {
+        resp.json().then((userData) => setUser(userData));
+      }
+    });
+  }, []);
+
+  console.log(user.username);
 
   return (
     <div id="AppMain" className="App">
