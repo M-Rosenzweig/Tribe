@@ -15,7 +15,12 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
 
-  const [user, setUser] = useState({username:""})
+  const [user, setUser] = useState({user:{
+    username:"",
+    email:''
+
+  }
+  })
 
   useEffect(() => {
     // auto-login
@@ -31,10 +36,10 @@ function App() {
   return (
     <div id="AppMain" className="App">
     
-     <Nav />
+     <Nav username={user.username} email={user.email} />
 
      <Routes>
-     {/* <Route path="/" element={<Tribe />}/> */}
+     <Route path="/tribes" element={<Tribe />}/>
      <Route path="/" element={<Login />}/>
      <Route path="/login" element={<Login />}/>
      <Route path="/signUp" element={<SignUp />}/>

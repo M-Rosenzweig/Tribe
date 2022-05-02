@@ -1,0 +1,11 @@
+.MemberCard {
+    /* background-color: rgb(121, 95, 61);
+     */
+     background-color: rgb(128, 186, 236);
+    height: 32vh;
+    /* margin-top: 3%; */
+    margin:2.5%;
+    min-width: 25%;
+    /* border: 1px solid red; */
+    opacity:50%;
+}

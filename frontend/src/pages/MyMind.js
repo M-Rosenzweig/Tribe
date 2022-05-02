@@ -4,7 +4,12 @@ import "./MyMind.css"
 
 function MyMind() {
   return (
-    <div>MyMind</div>
+    <div className='myMindMaster' >
+      
+      MyMind
+    
+    
+    </div>
   )
 }
 

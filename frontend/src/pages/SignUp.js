@@ -87,6 +87,8 @@ function handleCreateTribe(e) {
   })
   .then(resp => resp.json())
   .then(data => console.log(data))
+  window.location.href = "http://localhost:4000/tribes";
+
 }
 
 function handleJoinTribe(e){
@@ -113,6 +115,8 @@ function handleJoinTribe(e){
   })
   .then(resp => resp.json())
   .then(data => console.log(data))
+  window.location.href = "http://localhost:4000/tribes";
+
 }
   // alert('Hello - depending on errors or not send message')
 

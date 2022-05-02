@@ -39,12 +39,22 @@
     margin-top: 0%;
     font-size: 118%;
     text-decoration: none;
-    text-decoration-color: none; 
+    /* text-decoration-color: none;  */
 }
 
 
 .Logout{
-    margin-top: 145%;
+    margin-top: 90%;
     font-family: Montserrat, sans-serif;
+    cursor: pointer;
+}
+
+.NavUserName {
+    margin-top: 25%;
+    margin-bottom:2%;
+}
+
+.NavUserEmail {
+    margin-top: 2%;
 }
 

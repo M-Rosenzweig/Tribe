@@ -4,7 +4,10 @@ import "./Chat.css"
 
 function Chat() {
   return (
-    <div>Chat</div>
+    <div className='chatMaster' >Chat
+
+
+    </div>
   )
 }
 
