@@ -2,11 +2,11 @@ import React from 'react'
 import "./MemberCard.css"
 
 
-function MemberCard() {
+function MemberCard({ member }) {
   return (
     <div className='MemberCard' >
         
-        MemberCard
+      <h1> {member.username}</h1>  
 
 
     </div>

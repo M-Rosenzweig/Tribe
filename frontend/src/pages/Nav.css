@@ -1,9 +1,11 @@
 .NavBar {
     background-color:black;
+    /* background-image: url(../images/Tribb.jpg);  */
+
     width: auto;
     color:white;
     height: 100vh;
-    opacity:79%;
+    opacity:90%;
     display: flex;
     flex-direction: column;
     /* width: 240px; */

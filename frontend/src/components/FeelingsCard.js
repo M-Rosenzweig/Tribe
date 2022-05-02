@@ -4,7 +4,9 @@ import "./FeelingsCard.css"
 
 function FeelingsCard() {
   return (
-    <div>FeelingsCard</div>
+    <div className='FeelingCard'>
+      - Feelings Card
+    </div>
   )
 }
 

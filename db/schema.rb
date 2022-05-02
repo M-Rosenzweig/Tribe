@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_26_182947) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_02_181132) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,10 +38,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_182947) do
   create_table "messages", force: :cascade do |t|
     t.string "text"
     t.bigint "user_id", null: false
-    t.bigint "s_tribe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["s_tribe_id"], name: "index_messages_on_s_tribe_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -84,7 +82,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_182947) do
   add_foreign_key "bonds", "s_tribes"
   add_foreign_key "bonds", "users"
   add_foreign_key "books", "users"
-  add_foreign_key "messages", "s_tribes"
   add_foreign_key "messages", "users"
   add_foreign_key "priorities", "s_tribes"
   add_foreign_key "priorities", "users"

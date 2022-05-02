@@ -3,7 +3,6 @@ class User < ApplicationRecord
     has_many :s_tribes, through: :bonds
 
     has_many :messages
-    has_many :s_tribes, through: :messages
 
     has_many :priorities
     has_many :worries

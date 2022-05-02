@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post "/new_tribe", to: "users#new_tribe"
   post "/join_tribe", to: "users#join_tribe"
   get "/me", to: "users#show"
+  # get "/me", to: "users#show"
   delete "/logout", to: "sessions#destroy"
 
 

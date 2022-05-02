@@ -1,4 +1,75 @@
 .myMindMaster {
-    background-image: url(../images/Tribal.jpg) ;
+    /* background-image: url(../images/Tribal.jpg) ; */
+    background-image: url(../images/Tribb.jpg);
+    background-repeat: repeat;
+    color:white;
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-rows: 80vh 30vh;
+    
+}
 
+.PrioritiesSection {
+  border-right: 1px dotted;
+  border-bottom:1px solid;
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  text-align: center;
+}
+
+.PrioritiesTitle{
+    float:left;
+    /* margin-bottom: 0%; */
+    border: 1px solid #0ba5ec; 
+    margin-left:2%;
+    width:40vw;
+    /* color:black; */
+    /* margin-top: -4%; */
+
+}
+
+.PriorityInput {
+    width: 70%;
+    justify-content: center;
+    background-color: black;
+    padding-bottom: 2rem;
+    margin-left: 2%;
+    color: white;
+}
+
+
+.WorriesTitle{
+    float:left;
+    margin-left:2%;
+    border: 1px solid #0526e0; 
+    /* margin-top: -4%; */
+
+}
+
+.WorriesSection {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* justify-content: space-around; */
+  border-bottom:1px solid;
+
+
+}
+
+.EnergySection {
+    /* background-color: bisque; */
+   /* background: linear-gradient(#1531d0, #ADD8FF); */
+    /* opacity: 95%; */
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.EnergyButton{
+    padding:5rem;
+    margin-top:2%;
+    width:40vw;
+    background-color: lightgreen;
+    opacity: 90%;
+    font-size: 300%;
 }

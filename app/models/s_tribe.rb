@@ -1,9 +1,7 @@
-class STribe < ApplicationRecord
-    has_many :messages
-    has_many :users, through: :messages
-
+class STribe < ApplicationRecord    
     has_many :bonds
     has_many :users, through: :bonds
+    has_many :messages, through: :users
 
     validates :code, uniqueness: true
 end

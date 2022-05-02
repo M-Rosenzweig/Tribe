@@ -40,7 +40,7 @@ function Nav({username, email, setUserFunction}) {
      {/* <h2 className='NavWelcome'>Welcome User </h2>  */}
 
       <div className='NavOptions'>
-     <NavLink to="/tribes"><h2><FaCampground/> My Tribe </h2></NavLink>  
+     <NavLink to="/my-tribes"><h2><FaCampground/> My Tribes </h2></NavLink>  
       <NavLink to='/chat'><h2> <BsChatSquare/> Chat </h2></NavLink> 
      <NavLink to='/MyMind'> <h2> <FiCoffee/> On My Mind</h2> </NavLink>
      <NavLink to="/myBooks"><h2> <GiBookshelf/> My Shelf </h2> </NavLink> 
