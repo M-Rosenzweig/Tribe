@@ -4,8 +4,8 @@ import "./FeelingsCard.css"
 
 function FeelingsCard() {
   return (
-    <div className='FeelingCard'>
-      - Feelings Card
+    <div  className='FeelingCard'>
+      - Feelings Card kljlkjkljlkjkljklj
     </div>
   )
 }

@@ -1,9 +1,9 @@
 .TribeMain {
     background-image: url(../images/Tribal.jpg) ;
-    /* background-size: 150vh; */
+    background-size: auto;
     color: white;
     display: grid;
-    grid-template-rows: 4.5% auto 28vh;
+    grid-template-rows: 4.5% auto 35vh;
 }
 
 .TribeDeets{
@@ -42,7 +42,7 @@
     /* background-color: rgb(0, 255, 64); */
     /* display: grid; */
     /* grid-template-columns: auto auto; */
-    border-bottom: 7px solid red;
+    /* border-bottom: 8px solid rgb(12, 58, 58); */
     display: flex;
     justify-content: center;
 
@@ -58,7 +58,8 @@
     /* background-color: rgb(12, 58, 58); */
     /* border-top: 1px solid rgb(12, 58, 58);
     border-bottom: 1px solid rgb(12, 58, 58); */
-    border: 1px solid rgb(12, 58, 58);
+    /* border: 1px solid rgb(12, 58, 58); */
+    background-color:  rgb(12, 58, 58);
     margin-top:0.2%;
     margin-bottom:0.2%;
     opacity: 90%;
@@ -77,20 +78,23 @@
 
 .tribeCodeBottom {
     background-color: aqua;
-    margin:2.5%;
+    margin-top:1%;
+    margin-bottom:1%;
     border: 0px;
     padding:2.5%;
     border-radius: 25px;
 }
 
 .TribeCode {
-    /* background-color: black; */
+    background-color: black;
     border: 1px solid black;
     font-size: 115%;
     padding: 1%;
     width:max-content;
     justify-content: center;
     margin: auto;
-    color:black;
+    opacity: 90%;
+    color:white;
+    /* margin-bottom:0%; */
 }
 

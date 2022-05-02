@@ -7,7 +7,7 @@ function MyMind() {
   return (
     <div className='myMindMaster' >
       <div className='PrioritiesSection' >
-        <h1 className='PrioritiesTitle'>Top Priorities</h1>
+        <h1 className='PrioritiesTitle'>My Priorities</h1>
         <FeelingsCard/>
         <FeelingsCard/>
     {/* <input type="text" className='PriorityInput'></input> */}

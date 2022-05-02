@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import "./Login.css"
 
 function Login() {
@@ -7,6 +7,8 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
+
+  let navigate = useNavigate();
 
   function setEmailFunction(e) {
     setEmail(e.target.value)
@@ -38,6 +40,9 @@ function Login() {
     })
     .then(resp => {
       if (resp.ok){
+        window.location.href = "http://localhost:4000/my-tribes";
+        alert(`Welcome ${email}  `)
+        navigate('/my-tribes') 
         return resp.json();
       }
       alert('Invalid credentials - try again ')

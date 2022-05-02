@@ -33,12 +33,22 @@ function App() {
     });
   }, []);
 
+  function setUserFunction() {
+    setUser({
+      username:"",
+      email:'',
+      id: '',
+      s_tribes:[]
+  
+    })
+  }
+
 
 
   return (
     <div id="AppMain" className="App">
     
-     <Nav username={user.username} email={user.email} />
+     <Nav username={user.username} email={user.email} setUserFunction={setUserFunction} />
 
      <Routes>
      <Route path="/my-tribes" element={<Tribe user={user} tribes={user.s_tribes} />}/>

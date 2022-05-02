@@ -1,10 +1,11 @@
 .FeelingCard {
  background-color: rgb(40, 119, 189);
- margin:1%;
+ margin:1.5%;
+ width: max-content;
  padding:2%;
- border:1px solid red;
- max-width: 40vw;
+ /* border:1px solid white; */
+ max-width: 39vw;
  text-align: left;
- 
+ font-size: 120%;
 
 }

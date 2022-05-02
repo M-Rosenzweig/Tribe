@@ -28,7 +28,7 @@ function Nav({username, email, setUserFunction}) {
   }
 
   function handleLogin() {
-    console.log("send me to the Login page plz");
+    // console.log("send me to the Login page plz");
 
   }
 
@@ -48,7 +48,7 @@ function Nav({username, email, setUserFunction}) {
      {/* <FiLogOut/> */}
    
      
-     <h2 className='Logout' onClick={handleLogout}> <MdLogout/>{ username ? "Logout" : null}</h2>
+    <NavLink to='/login'> <h2 className='Logout' onClick={handleLogout}> {username ? <MdLogout/> : null} { username ? "Logout" : null}</h2> </NavLink>
     <NavLink to='/login'><h2 className='Login' onClick={handleLogin}> <MdLogout/>{ username ? null : "Login"}</h2> </NavLink>
     <h3 className='NavUserName'>{username}</h3>
     <h3 className='NavUserEmail'>{email}</h3>
