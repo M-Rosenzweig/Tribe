@@ -19,7 +19,7 @@ function App() {
     username:"",
     email:'',
     id: '',
-    s_tribes:[]
+    s_tribes:['']
 
   }
   )
@@ -43,6 +43,10 @@ function App() {
     })
   }
 
+//  function handleCurrentTribe (id) {
+//   console.log(id);
+//  }
+// handleCurrentTribe={handleCurrentTribe} 
 
 
   return (
@@ -55,7 +59,7 @@ function App() {
      <Route path="/" element={<Login />}/>
      <Route path="/login" element={<Login />}/>
      <Route path="/signUp" element={<SignUp />}/>
-     <Route path="/myMind" element={<MyMind user={user} />}/>
+     <Route path="/myMind" element={<MyMind user={user} tribes={user.s_tribes} />}/>
      <Route path="/chat" element={<Chat />}/>
 
      <Route path="/myBooks" element={<MyBooks />}/>

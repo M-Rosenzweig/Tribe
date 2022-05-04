@@ -52,7 +52,7 @@ class UsersController < ApplicationController
       else  
         user.energy = 1
         puts user.energy
-        puts user.energy
+    puts user.energy
         user.save
       end
       render json: user.energy

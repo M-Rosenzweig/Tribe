@@ -2,10 +2,21 @@
  background-color: rgb(40, 119, 189);
  margin:1.5%;
  width: max-content;
+ min-width: 85%;
+ max-width: 90%;
+ border-radius: 25px;
  padding:2%;
  /* border:1px solid white; */
- max-width: 39vw;
  text-align: left;
  font-size: 120%;
+ /* opacity: 98%; */
+}
 
+.DeleteFeeling{
+    background-color: transparent;
+    /* color:red; */
+    border-color: transparent;
+    font-size: larger;
+    float:right;
+    cursor: pointer;
 }

@@ -3,14 +3,19 @@ import './Tribe.css'
 import MemberCard from '../components/MemberCard'
 
 function Tribe({ user, tribes }) {
-
+  // handleCurentTribe
   const [tribeMembers, setTribeMembers] = useState([])
   const [tribeName, setTribeName] = useState('')
   const [tribeCode, setTribeCode] = useState('')
+  // const [currentTribe, setCurrentTribe] = useState(tribes[0].id)
+
+  // console.log(currentTribe);
 
   function handleTribeChange(event){
     let newTribeId = event.target.value;
     fetchAndPopulate(newTribeId);
+    // setCurrentTribe(newTribeId)
+    // handleCurentTribe(currentTribe)
   }
 
   function fetchAndPopulate(TribeId){

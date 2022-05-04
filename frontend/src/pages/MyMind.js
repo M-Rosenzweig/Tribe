@@ -1,90 +1,216 @@
 import React, { useState, useEffect } from 'react'
 import "./MyMind.css"
 import FeelingsCard from '../components/FeelingsCard'
+import WorryCard from '../components/WorryCard'
+import { v4 as uuidv4 } from "uuid";
+import {BiSend} from 'react-icons/bi'
 
 
-function MyMind({user}) {
+function MyMind({user, tribes}) {
 
   const [energy, setEnergy] = useState('')
   const [className, setClassName] = useState('EnergyButton')
-  const [feeling, setFeeling] = useState('Toggle Me')
-  console.log(energy);
+  const [feeling, setFeeling] = useState('')
+  const [tagline, setTagline] = useState('')
+  const [priority, setPriority] = useState('')
+  const [worry, setWorry] = useState('')
+  const [userPriorities, setUserPriorites] = useState([])
+  const [userWorries, setUserWorries] = useState([])
+  
+
+
+  // console.log(energy);
   let ID = user.id
+  let tribeID = tribes[0].id
+
   
   useEffect(() => {
-    // auto-login
+    // getting the users worries from backend and setting it to state
+    fetch(`/user_worries/${ID}`).then((resp) => {
+      if (resp.ok) {
+        resp.json().then((data) => {
+         setUserWorries(data)
+         console.log(data)
+        })
+      }
+    });
+  },[user]);
+
+  useEffect(() => {
+    // getting the users priorites from backend and setting it to state
+    fetch(`/user_priorities/${ID}`).then((resp) => {
+      if (resp.ok) {
+        resp.json().then((data) => {
+         setUserPriorites(data)
+         console.log(data)
+        })
+      }
+    });
+  },[user]);
+  
+  useEffect(() => {
+    // getting the users current energy from backend
     fetch(`/energy/${ID}`).then((resp) => {
       if (resp.ok) {
         resp.json().then((energyData) => {
-          console.log(energyData)
+          // console.log(energyData)
          setEnergy(energyData)
         })
       }
     });
-  }, [user]);
+  },[user]);
 
+  // setting state of what to display on the frontend for the users current energy level 
   useEffect(() => {
-    if(energy == 1){
+    if(energy === 1){
       setClassName("EnergyWeak")
-    } else if(energy ==2) {
+      setFeeling('Weak')
+      setTagline('I need help and am struggling')
+    } else if(energy ===2) {
       setClassName("EnergyDecent")
-    } else if(energy == 3){
+      setFeeling('Decent')
+      setTagline('I am feeling Decent but can use some attention from my tribe members')
+    } else if(energy === 3){
       setClassName('EnergySolid')
-    } else if(energy == 4){
+      setFeeling('Solid')
+      setTagline('I am feeling good about my priorities but have some concerns')
+    } else if(energy === 4){
       setClassName('EnergyAwesome')
+      setFeeling('Awesome')
+      setTagline('I feel confident - I got this')
     }
   },[energy])
 
+  // changing the backend as well as the front end when a use toggles their energy 
   function handleEnergyShift() {
     fetch(`/update/${ID}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       }, 
-    }).then(resp => resp.json()) 
-    .then(data => console.log(data))
-    if (energy == 1) {
+    })
+    if (energy === 1) {
       setEnergy(energy + 1) 
       setFeeling("Decent")
-    } else if (energy == 2) {
+    } else if (energy === 2) {
       setEnergy(energy + 1)
       setFeeling("Solid")
-    } else if (energy == 3) {
+    } else if (energy === 3) {
       setEnergy(energy + 1)
       setFeeling('Awesome')
-    } else if (energy == 4) {
+    } else if (energy === 4) {
       setEnergy(1)
       setFeeling('Weak')
     }
     
   }
 
+  // setting state of the current priority that the user puts in 
+  function handlePriority(e) {
+    setPriority(e.target.value)
+  }
+
+  
+ function handleWorry(e) {
+  setWorry(e.target.value)
+ }
+
+  function uploadPriority(e) {
+    let newPriority = {
+      text: priority, 
+      user_id: ID,
+      s_tribe_id: tribeID
+    }
+    fetch(`/priorities`,  {
+      method:"POST", 
+      headers: {
+      'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newPriority),
+    })
+    .then(resp => resp.json())
+    .then(newPriority => console.log(newPriority))
+    setUserPriorites([...userPriorities, newPriority])
+    setPriority('')
+    e.preventDefault()
+  }
+
+  function uploadWorry(e) {
+    let newWorry = {
+      text: worry, 
+      user_id: ID, 
+      s_tribe_id: tribeID
+    }
+    fetch(`/worries`,  {
+      method:"POST", 
+      headers: {
+      'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newWorry),
+    })
+    .then(resp => resp.json())
+    .then(newWorry => console.log(newWorry))
+    setUserWorries([...userWorries, newWorry])
+    setWorry('')
+    e.preventDefault()
+    
+  }
+
+
+ let mappedPriorities = userPriorities.map(p => {
+  console.log(p.text);
+
+   return (
+     <FeelingsCard
+     key={uuidv4()}
+     text={p.text}
+     />
+   )
+ })
+
+ let mappedWorries = userWorries.map(w => {
+  console.log(w);
+
+   return (
+      <WorryCard
+      key={uuidv4()}
+      text={w.text}
+   />
+   )
+ })
+
   return (
     <div className='myMindMaster' >
+
       <div className='PrioritiesSection' >
         <h1 className='PrioritiesTitle'>My Priorities</h1>
-        <FeelingsCard/>
-        <FeelingsCard/>
-    {/* <input type="text" className='PriorityInput'></input> */}
-    {/* value={} onChange={} */}
-    {/* <input className='logininput' placeholder='Priorities' ></input> */}
+        {mappedPriorities}
+        <form onSubmit={uploadPriority}> 
+        <input type="text" id='PriorityPlaceHolder' value={priority} onChange={handlePriority} className='PriorityInput' placeholder='type here' ></input>
+        <button className='ClickPriority'><BiSend/></button>
+        </form>
+       
 
       </div>
 
       <div className='WorriesSection' > 
         <h1 className='WorriesTitle'>Whats Holding Me Back</h1>
-        <FeelingsCard/>
-        <FeelingsCard/>
+        {mappedWorries}
+        <form onSubmit={uploadWorry}>
+       <input type="text" value={worry} onChange={handleWorry} className='PriorityInput' placeholder='type here'></input>
+       <button className='ClickPriority'><BiSend/></button>
+        </form>
+      
+
       </div>
 
       <div className='EnergySection'> 
         <h2> Toggle Your Energy Level</h2>
-      <button id='EnergyButton' className={className} onClick={handleEnergyShift} > {feeling} </button>
-
+        <button id='EnergyButton' className={className} onClick={handleEnergyShift} > {feeling} </button>
+        <h4 className='EnergyTagline'>{tagline}</h4>
       </div>
 
-      
-    
+      {/* <WorryCard text={text}/> */}
     
     </div>
   )
