@@ -35,6 +35,29 @@ class UsersController < ApplicationController
         end
     end
 
+    def energy 
+        user_energy = User.find(params[:id]).energy
+        if user_energy
+        render json: user_energy
+        else
+            render json:{error: "There Was an Error with your request"}
+        end
+    end 
+
+    def update
+      user= User.find(params[:id])
+      if user.energy <= 3
+        user.energy = user.energy + 1
+        user.save
+      else  
+        user.energy = 1
+        puts user.energy
+        puts user.energy
+        user.save
+      end
+      render json: user.energy
+    end
+
     private
 
     def create_user_params

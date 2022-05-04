@@ -2,6 +2,7 @@
     display: grid;
     grid-template-rows: 25% auto;
     background-image: url(../images/Fire.gif) ;
+    /* background-size: cover; */
     
     /* border-color:solid black; */
 }

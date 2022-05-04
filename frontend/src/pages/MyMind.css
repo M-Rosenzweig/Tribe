@@ -65,13 +65,30 @@
     grid-column-end: 3;
 }
 
-.EnergyButton{
+#EnergyButton{
     padding:5rem;
+    border-radius: 25px;
     margin-top:2%;
     margin-bottom: 7%;
     width:40vw;
-    background-color: lightgreen;
     opacity: 90%;
     font-size: 300%;
     cursor: pointer;
+}
+
+.EnergyWeak {
+    background-color: beige;
+}
+
+.EnergyDecent{
+    background-color: #0526e0;
+}
+
+.EnergySolid {
+    background-color: aquamarine;
+}
+
+.EnergyAwesome {
+    background-color: lightgreen;
+
 }
