@@ -19,5 +19,11 @@ class WorriesController < ApplicationController
         render json: {errors:invalid.record.errors}, status:422
     end 
 
+    def destroy 
+        remove_worry = Worry.find(params[:id])
+        remove_worry.destroy
+        render json: remove_worry
+    end 
+
     
 end

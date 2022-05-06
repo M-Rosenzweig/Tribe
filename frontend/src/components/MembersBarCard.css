@@ -1,0 +1,36 @@
+.MemberBarCard {
+    font-weight: 700;
+    color:black;
+    height: fit-content;
+    font-size: 145%;
+    padding: 1.8%;
+    border-radius: 50px;
+    opacity: 90%;
+    cursor: pointer;
+    /* min-width: 5%; */
+}
+
+#BarEnergyWeak {
+    /* border:10px solid  rgb(131, 26, 44); */
+    background-color: rgb(131, 26, 44);
+
+}
+
+#BarEnergyDecent {
+    /* border:10px solid #0526e0;  */
+    /* background-color: #0526e0; */
+    background-color:#157BD0;
+
+}
+
+#BarEnergySolid {
+    /* border:10px solid aquamarine */
+    background-color: aquamarine;
+
+}
+
+#BarEnergyAwesome {
+    /* border:10px solid rgb(15, 255, 80) */
+    background-color: rgb(15, 255, 80);
+
+}

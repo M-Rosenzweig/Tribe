@@ -30,7 +30,6 @@ function MyMind({user, tribes}) {
       if (resp.ok) {
         resp.json().then((data) => {
          setUserWorries(data)
-         console.log(data)
         })
       }
     });
@@ -42,12 +41,12 @@ function MyMind({user, tribes}) {
       if (resp.ok) {
         resp.json().then((data) => {
          setUserPriorites(data)
-         console.log(data)
         })
       }
     });
   },[user]);
   
+
   useEffect(() => {
     // getting the users current energy from backend
     fetch(`/energy/${ID}`).then((resp) => {
@@ -73,7 +72,7 @@ function MyMind({user, tribes}) {
     } else if(energy === 3){
       setClassName('EnergySolid')
       setFeeling('Solid')
-      setTagline('I am feeling good about my priorities but have some concerns')
+      setTagline('I am feeling good about my priorities but am a bit worried')
     } else if(energy === 4){
       setClassName('EnergyAwesome')
       setFeeling('Awesome')
@@ -156,25 +155,70 @@ function MyMind({user, tribes}) {
     
   }
 
+  function handlePrioritiesStateRefresh(ID) {
+    // console.log(ID)
+        fetch(`/user_priorities/${ID}`).then((resp) => {
+          if (resp.ok) {
+            resp.json().then((data) => {
+             setUserPriorites(data)
+            })
+          }})
+  }
 
- let mappedPriorities = userPriorities.map(p => {
-  console.log(p.text);
+  function handleFeelingDelete(id) {
+    console.log(user.id);
+    fetch(`/priorities/${id}`, {
+          method: 'DELETE', 
+        })
+        .then(resp => resp.json())
+        .then(data => console.log(data))
 
+        handlePrioritiesStateRefresh(user.id)
+  }
+
+  function handleWorriesStateRefresh(id) {
+
+    console.log(id)
+    fetch(`/user_worries/${id}`).then((resp) => {
+      if (resp.ok) {
+        resp.json().then((data) => {
+         setUserWorries(data)
+        })
+      }
+    })
+  }
+
+  function handleWorryDelete(id) {
+    fetch(`/worries/${id}`, {
+      method: 'DELETE', 
+    })
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+
+    handleWorriesStateRefresh(user.id)
+
+  }
+
+
+ let mappedPriorities = userPriorities.map(pri => {
+  //  console.log(p)
    return (
      <FeelingsCard
      key={uuidv4()}
-     text={p.text}
+     text={pri.text}
+     id={pri.id}
+     handleFeelingDelete={handleFeelingDelete}
      />
    )
  })
 
  let mappedWorries = userWorries.map(w => {
-  console.log(w);
-
    return (
       <WorryCard
       key={uuidv4()}
       text={w.text}
+      id={w.id}
+      handleWorryDelete={handleWorryDelete}
    />
    )
  })
@@ -194,14 +238,12 @@ function MyMind({user, tribes}) {
       </div>
 
       <div className='WorriesSection' > 
-        <h1 className='WorriesTitle'>Whats Holding Me Back</h1>
+        <h1 className='WorriesTitle'>My Worries</h1>
         {mappedWorries}
         <form onSubmit={uploadWorry}>
-       <input type="text" value={worry} onChange={handleWorry} className='PriorityInput' placeholder='type here'></input>
-       <button className='ClickPriority'><BiSend/></button>
+        <input type="text" value={worry} onChange={handleWorry} className='PriorityInput' placeholder='type here'></input>
+        <button className='ClickPriority'><BiSend/></button>
         </form>
-      
-
       </div>
 
       <div className='EnergySection'> 

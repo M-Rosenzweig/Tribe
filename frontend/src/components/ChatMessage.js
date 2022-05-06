@@ -4,7 +4,9 @@ import "./ChatMessage.css"
 
 function ChatMessage() {
   return (
-    <div>ChatMessage</div>
+    <div className='ChatMessageItem'>
+      hello <div className='MessageTime'>11:34</div> 
+    </div>
   )
 }
 

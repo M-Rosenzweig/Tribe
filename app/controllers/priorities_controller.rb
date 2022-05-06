@@ -19,5 +19,11 @@ class PrioritiesController < ApplicationController
         render json: {errors:invalid.record.errors}, status:422
     end 
 
+    def destroy
+        remove_priority = Priority.find(params[:id])
+        remove_priority.destroy
+        render json: remove_priority
+    end
+
 
 end

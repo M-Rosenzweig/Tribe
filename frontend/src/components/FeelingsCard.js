@@ -4,11 +4,15 @@ import { RiCloseCircleLine } from "react-icons/ri";
 
 
 
-function FeelingsCard(text) {
-  console.log(text);
+function FeelingsCard({ text, id, handleFeelingDelete }) {
+
+  function handleDelete(id) {
+    handleFeelingDelete(id)
+  }
+
   return (
     <div  className='FeelingCard'>
-      {text.text} <button className='DeleteFeeling'> <RiCloseCircleLine/></button>
+      {text} <button className='DeleteFeeling' onClick={() => handleDelete(id)} ><RiCloseCircleLine/></button>
     </div>
   )
 }

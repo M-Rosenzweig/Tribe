@@ -1,11 +1,12 @@
 .NavBar {
-    background-color:black;
+    /* background-color:black;
+     */
     /* background-image: url(../images/Tribb.jpg);  */
-
+    background-color: #282d32;
     width: auto;
     color:white;
     height: auto;
-    opacity:90%;
+    opacity:95%;
     display: flex;
     flex-direction: column;
     /* width: 240px; */
@@ -17,9 +18,13 @@
 }
 
 .NavTitle {
-    color: rgb(252, 103, 4);
+    /* color: rgb(252, 103, 4);
+     */
     /* margin-bottom: 20%; */
     font-size: 285%;
+    color:orange;
+    /* color:green; */
+    /* color:#157BD0; */
     font-family:cursive;
     margin-bottom: 5%;
     text-align: start;
@@ -44,6 +49,23 @@
     /* text-decoration-color: none;  */
 }
 
+.NavOptions > a {
+    text-decoration: none;
+    color:white;
+}
+
+.NavOptions > a:hover {
+    color:#157BD0;
+}
+
+/* ::selection {
+    color:grey;
+}
+
+.NavOptions a.active a {
+    border-left: 4px solid #157BD0 ;
+    text-decoration-color: #157BD0;
+} */
 
 .Logout{
     margin-top: 90%;

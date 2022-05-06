@@ -3,11 +3,11 @@ import './Tribe.css'
 import MemberCard from '../components/MemberCard'
 
 function Tribe({ user, tribes }) {
-  // handleCurentTribe
   const [tribeMembers, setTribeMembers] = useState([])
   const [tribeName, setTribeName] = useState('')
   const [tribeCode, setTribeCode] = useState('')
   // const [currentTribe, setCurrentTribe] = useState(tribes[0].id)
+
 
   // console.log(currentTribe);
 
@@ -23,8 +23,7 @@ function Tribe({ user, tribes }) {
     .then(resp => resp.json())
     .then(data => {
       setTribeMembers(data.users)
-      // also need to change the state of the tribes name on the bottom after the 
-      // user changes which tribe they looking at + change the code 
+      // console.log(data.users) 
     })
   }
 
@@ -51,7 +50,8 @@ function Tribe({ user, tribes }) {
       </div>
 
       <div className='TribeMembers'>
-        <MemberCard member={user} />
+
+      {user.energy !== '' && <MemberCard member={user}/>}  
 
         {tribeMembers.filter(member => member.id !== user.id)
         .map(member => <MemberCard key={member.id} member={member}/>)}

@@ -1,0 +1,27 @@
+.ChatMessageItem {
+    display: flex;
+    align-items: center;
+    float: left;
+    text-overflow: clip;
+    font-size: 137%;
+    font-weight: 400;
+    background-color: #FBFAF5 ;
+    color: black;
+    min-width: 8%;
+    /* max-width:50%; */
+    width: fit-content;
+    height: max-content;
+    max-width: 70%;
+    text-align: start;
+    margin-left:2.8%;
+    margin-top:1%;
+    margin-bottom:1%;
+    border-radius: 20px;
+    padding: 1%;
+}
+
+.MessageTime {
+    font-size: small;
+    margin-top: 10%;
+    margin-left: 25%;
+}

@@ -3,11 +3,17 @@ import "./WorryCard.css"
 import { RiCloseCircleLine } from "react-icons/ri";
 
 
-function WorryCard({text}) {
-    console.log(text);
+function WorryCard({text, id, handleWorryDelete}) {
+    // console.log(text);
+    // console.log(id);
+
+    function handleWorry(id) {
+        handleWorryDelete(id)
+    }
+
   return (
     <div className='WorryCardMaster'>
-        {text} <button className='DeleteFeeling'> <RiCloseCircleLine/></button>
+        {text} <button className='DeleteFeeling' onClick={() => handleWorry(id)}> <RiCloseCircleLine/></button>
     </div>
   )
 }

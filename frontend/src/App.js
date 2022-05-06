@@ -17,6 +17,7 @@ function App() {
 
   const [user, setUser] = useState({
     username:"",
+    energy:'',
     email:'',
     id: '',
     s_tribes:['']
@@ -59,8 +60,8 @@ function App() {
      <Route path="/" element={<Login />}/>
      <Route path="/login" element={<Login />}/>
      <Route path="/signUp" element={<SignUp />}/>
-     <Route path="/myMind" element={<MyMind user={user} tribes={user.s_tribes} />}/>
-     <Route path="/chat" element={<Chat />}/>
+     <Route path="/myMind" element={user.id !== '' && <MyMind user={user} tribes={user.s_tribes} />}/>
+     <Route path="/chat" element={<Chat user={user} tribes={user.s_tribes} />}/>
 
      <Route path="/myBooks" element={<MyBooks />}/>
      <Route path="/friendsBooks" element={<FriendsBooks />}/>
