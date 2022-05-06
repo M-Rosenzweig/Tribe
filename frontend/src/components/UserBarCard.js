@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import "./MembersBarCard.css"
 
-function UserBarCard({member, handleSetMemberID, handleSetMemberName}) {
+function UserBarCard({member, handleSetMemberID, handleSetMemberName, energy}) {
     const [barEnergyClass, setBarEnergyClass] = useState('')
 
   useEffect(() => {
-    switch(member.energy) {
+    switch(energy) {
       case 1:
         setBarEnergyClass('BarEnergyWeak')
         break;
@@ -21,7 +21,7 @@ function UserBarCard({member, handleSetMemberID, handleSetMemberName}) {
           setBarEnergyClass('BarEnergyAwesome')
           break;
     }
-  },[])
+  },[energy])
 
  function onHandleSetMemberDetails(id, name) {
     handleSetMemberID(id)

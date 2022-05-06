@@ -18,10 +18,10 @@ function Chat({user, tribes}) {
   const [show, setShow] = useState(true)
   const [memberID, setMemberID] = useState(user.id)
   const [memberName, setMemberName] = useState(user.username)
-  const [energy, setEnergy] = useState('')
+  const [energy, setEnergy] = useState(user.energy)
 
 
-  
+
 
   function handleSetMemberID(id) {
     setMemberID(id)
@@ -52,6 +52,17 @@ function Chat({user, tribes}) {
       }
     });
   },[memberID]);
+
+  useEffect(() => {
+    // getting the users current energy from backend
+    fetch(`/energy/${memberID}`).then((resp) => {
+      if (resp.ok) {
+        resp.json().then((energyData) => {
+         setEnergy(energyData)
+        })
+      }
+    });
+  },[]);
 
   let mappedPriorities = userPriorities.map(pri => {
     //  console.log(p)
@@ -96,6 +107,25 @@ function Chat({user, tribes}) {
       setShow(!show)
     }
 
+    function toggleTheUserEnergy() {
+      fetch(`/update/${memberID}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        }, 
+      });
+
+      if (energy === 1) {
+        setEnergy(energy + 1) 
+      } else if (energy === 2) {
+        setEnergy(energy + 1)
+      } else if (energy === 3) {
+        setEnergy(energy + 1)
+      } else if (energy === 4) {
+        setEnergy(1)
+      }
+    }
+
   return (
     <div className='chatMaster' >
 
@@ -115,7 +145,7 @@ function Chat({user, tribes}) {
       </div>
 
       <div className='MembersRow'>
-        {user.energy !== '' && <UserBarCard handleSetMemberName={handleSetMemberName} handleSetMemberID={handleSetMemberID} member={user} />}
+        {user.energy !== '' && <UserBarCard handleSetMemberName={handleSetMemberName} handleSetMemberID={handleSetMemberID} member={user} energy={energy} />}
 
         {tribeMembers.filter(member => member.id !== user.id)
         .map(member => <MembersBarCard handleSetMemberName={handleSetMemberName} handleSetMemberID={handleSetMemberID} key={member.id} member={member}/>)}
@@ -123,13 +153,14 @@ function Chat({user, tribes}) {
       </div>
 
       <div className='ChatSideDeets' >
-        <h1>{memberName} {memberName == user.username ? <button className='sideDeetsEnergy'>energy</button> : null}</h1>
+        <h1>{memberName}</h1>
+        {memberName == user.username ? <button onClick={toggleTheUserEnergy} className='sideDeetsEnergy'>energy</button> : null}
          {show ?  mappedPriorities : mappedWorries }
 
       </div>
 
       <div className='ToggleSection'>
-          <button onClick={handleShowToggle} className='ToggleDeets'>{show ? "Priorites" : "Worries"}</button>
+          <button onClick={handleShowToggle}className='ToggleDeets'>{show ? "Priorites" : "Worries"}</button>
       </div>
 
       <div className='ChatVibes1'>
