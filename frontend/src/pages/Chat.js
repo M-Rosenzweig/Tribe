@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import MembersBarCard from '../components/MembersBarCard'
+import UserBarCard from '../components/UserBarCard'
 import ChatMessage from '../components/ChatMessage'
+import ChatFeelingCard from '../components/ChatFeelingCard'
 import {BiSend} from 'react-icons/bi'
 
 
@@ -11,6 +13,67 @@ function Chat({user, tribes}) {
 
   const [tribeMembers, setTribeMembers] = useState([])
   const [tribeName, setTribeName] = useState('')
+  const [userPriorities, setUserPriorites] = useState([])
+  const [userWorries, setUserWorries] = useState([])
+  const [show, setShow] = useState(true)
+  const [memberID, setMemberID] = useState(user.id)
+  const [memberName, setMemberName] = useState(user.username)
+  const [energy, setEnergy] = useState('')
+
+
+  
+
+  function handleSetMemberID(id) {
+    setMemberID(id)
+  }
+
+  function handleSetMemberName(name) {
+    setMemberName(name)
+  }
+
+  useEffect(() => {
+    // getting the users worries from backend and setting it to state
+    fetch(`/user_worries/${memberID}`).then((resp) => {
+      if (resp.ok) {
+        resp.json().then((data) => {
+         setUserWorries(data)
+        })
+      }
+    });
+  },[memberID]);
+
+  useEffect(() => {
+    // getting the users priorites from backend and setting it to state
+    fetch(`/user_priorities/${memberID}`).then((resp) => {
+      if (resp.ok) {
+        resp.json().then((data) => {
+         setUserPriorites(data)
+        })
+      }
+    });
+  },[memberID]);
+
+  let mappedPriorities = userPriorities.map(pri => {
+    //  console.log(p)
+     return (
+       <ChatFeelingCard
+       key={pri.id}
+       text={pri.text}
+       id={pri.id}
+       />
+     )
+   })
+
+   let mappedWorries = userWorries.map(w => {
+    return (
+       <ChatFeelingCard
+       key={w.id}
+       text={w.text}
+       id={w.id}
+    />
+    )
+  })
+
 
   useEffect(() => {
     if (tribes[0]){
@@ -29,7 +92,9 @@ function Chat({user, tribes}) {
     })
   }
 
-  // console.log(tribeName);
+    function handleShowToggle() {
+      setShow(!show)
+    }
 
   return (
     <div className='chatMaster' >
@@ -37,10 +102,6 @@ function Chat({user, tribes}) {
       <div className='ChatMain' >
 
         <div className='MessagesArea'>
-          <ChatMessage/>
-          <ChatMessage/>
-          <ChatMessage/>
-          <ChatMessage/>
           <ChatMessage/>
         </div>
 
@@ -50,34 +111,29 @@ function Chat({user, tribes}) {
            <button className='ChatSendMessage'><BiSend/></button>
 
         </div>
-     
-      {/* {user.energy !== '' && <MembersBarCard member={user} />}
-      {user.energy !== '' && <MembersBarCard member={user} />}
-      {user.energy !== '' && <MembersBarCard member={user} />} */}
 
-    
       </div>
 
       <div className='MembersRow'>
-        {/* < MembersBarCard /> */}
-        {user.energy !== '' && <MembersBarCard member={user} />}
+        {user.energy !== '' && <UserBarCard handleSetMemberName={handleSetMemberName} handleSetMemberID={handleSetMemberID} member={user} />}
 
         {tribeMembers.filter(member => member.id !== user.id)
-        .map(member => <MembersBarCard key={member.id} member={member}/>)}
+        .map(member => <MembersBarCard handleSetMemberName={handleSetMemberName} handleSetMemberID={handleSetMemberID} key={member.id} member={member}/>)}
 
       </div>
 
       <div className='ChatSideDeets' >
-         <h1> {user.username ? user.username : ''}</h1> 
-         <h4  className='FeelingCard'> - testing 123</h4>
+        <h1>{memberName} {memberName == user.username ? <button className='sideDeetsEnergy'>energy</button> : null}</h1>
+         {show ?  mappedPriorities : mappedWorries }
+
       </div>
 
       <div className='ToggleSection'>
-          <button className='ToggleDeets'>Priorities</button>
+          <button onClick={handleShowToggle} className='ToggleDeets'>{show ? "Priorites" : "Worries"}</button>
       </div>
 
       <div className='ChatVibes1'>
-          <h1>Tribe Name</h1>
+          <h1>{tribeName}</h1>
       </div>
 
 

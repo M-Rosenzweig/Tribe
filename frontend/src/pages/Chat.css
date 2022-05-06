@@ -92,17 +92,29 @@
 
 .ChatSideDeets {
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     flex-direction: column;
     /* justify-content: center; */
-    /* align-items: center; */
+    align-items: center;
     border-left: 1px solid green;
     border-top: 1px solid green;
-    
+    border-bottom: 1px solid green;
+    /* overflow-y: scroll; */
+}
+
+.sideDeetsEnergy {
+    /* margin-left:0.1%; */
+    /* margin-bottom: 3%; */
+    /* padding: 1%; */
+    background-color: transparent;
+    color:white;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 50%;
 }
 
 .ToggleSection {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
     justify-content: center;
 
@@ -121,6 +133,6 @@
 
 .ChatVibes1 {
     /* background-color: rgb(162, 0, 255); */
-    border: 1px solid red;
+    border: 1px solid green;
 }
 

@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import "./MembersBarCard.css"
 
-
-function MembersBarCard({ member, handleSetMemberID, handleSetMemberName }) {
-  const [barEnergyClass, setBarEnergyClass] = useState('')
+function UserBarCard({member, handleSetMemberID, handleSetMemberName}) {
+    const [barEnergyClass, setBarEnergyClass] = useState('')
 
   useEffect(() => {
     switch(member.energy) {
@@ -24,18 +23,16 @@ function MembersBarCard({ member, handleSetMemberID, handleSetMemberName }) {
     }
   },[])
 
-  function onHandleSetMemberDetails(id, name) {
+ function onHandleSetMemberDetails(id, name) {
     handleSetMemberID(id)
     handleSetMemberName(name)
-  }
+ }
 
   return (
     <div id={barEnergyClass} onClick={ () => onHandleSetMemberDetails(member.id, member.username)} className='MemberBarCard'>
       {member.username}
-      
-      
-      </div>
+    </div>
   )
 }
 
-export default MembersBarCard
+export default UserBarCard
