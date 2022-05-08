@@ -1,6 +1,8 @@
 .chatMaster {
-    background-image: url(../images/Tribb.jpg) ;
+    /* background-image: url(../images/Tribb.jpg) ; */
     /* background: linear-gradient(#157BD0, #ADD8FF); */
+  background: linear-gradient(#282d32, #424950);
+
     height: auto;
     /* margin:0%; */
     display: grid;
@@ -84,8 +86,9 @@
     grid-column-end: 3;
     /* border-bottom: 1px solid ; */
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: center;
+    
 }
 
 
@@ -102,6 +105,15 @@
     /* overflow-y: scroll; */
 }
 
+.ChatSideDeetsMemberName {
+    background-color: #282d32;
+    padding: 5%;
+    width: 90%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+
+}
+
 .sideDeetsEnergy {
     border-color: transparent;
     background-color: transparent;
@@ -110,7 +122,8 @@
     width: 50%;
     font-weight: 500;
     border-radius: 50%;
-    margin-top:0%;
+    margin-top:0.5%;
+    margin-bottom:2%;
 }
 
 .ToggleSection {

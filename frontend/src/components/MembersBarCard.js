@@ -31,7 +31,7 @@ function MembersBarCard({ member, handleSetMemberID, handleSetMemberName }) {
 
   return (
     <div id={barEnergyClass} onClick={ () => onHandleSetMemberDetails(member.id, member.username)} className='MemberBarCard'>
-      {member.username}
+    <p>{member.username}</p>  
       
       
       </div>

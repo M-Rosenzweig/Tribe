@@ -40,7 +40,7 @@ function Login() {
     })
     .then(resp => {
       if (resp.ok){
-        window.location.href = "http://localhost:4000/my-tribes";
+        window.location.href = "http://localhost:4000/chat";
         alert(`Welcome ${email}  `)
         navigate('/my-tribes') 
         return resp.json();

@@ -132,6 +132,17 @@ function Chat({user, tribes}) {
       <div className='ChatMain' >
 
         <div className='MessagesArea'>
+          {/*
+           Ok Lets just think through how a chat works in my own words and then get to 
+           work on creating it. 
+
+           This tribe has an array of messages. These messages belong to different users. 
+           we want to call all of the created messages in order of their creation and mapped them into the ChatMessage Component. 
+
+           When we create a new message that changes the web socket and it knows to do another fetch to give the new information and places it in order
+           
+
+           */}
           <ChatMessage/>
         </div>
 
@@ -145,15 +156,16 @@ function Chat({user, tribes}) {
       </div>
 
       <div className='MembersRow'>
-        {user.energy !== '' && <UserBarCard handleSetMemberName={handleSetMemberName} handleSetMemberID={handleSetMemberID} member={user} energy={energy} />}
 
         {tribeMembers.filter(member => member.id !== user.id)
         .map(member => <MembersBarCard handleSetMemberName={handleSetMemberName} handleSetMemberID={handleSetMemberID} key={member.id} member={member}/>)}
 
+       {user.energy !== '' && <UserBarCard handleSetMemberName={handleSetMemberName} handleSetMemberID={handleSetMemberID} member={user} energy={energy} />}
+
       </div>
 
       <div className='ChatSideDeets' >
-        <h1>{memberName}</h1>
+        <h1 className='ChatSideDeetsMemberName'>{memberName}</h1>
         {memberName == user.username ? <button onClick={toggleTheUserEnergy} className='sideDeetsEnergy'>energy</button> : null}
          {show ?  mappedPriorities : mappedWorries }
 
