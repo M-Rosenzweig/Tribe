@@ -3,13 +3,15 @@ import MembersBarCard from '../components/MembersBarCard'
 import UserBarCard from '../components/UserBarCard'
 import ChatMessage from '../components/ChatMessage'
 import ChatFeelingCard from '../components/ChatFeelingCard'
+import ChatWebSocket from "../ChatWebSocket";
+
 import {BiSend} from 'react-icons/bi'
 
 
 import "./Chat.css"
 
 
-function Chat({user, tribes}) {
+function Chat({user, tribes, cableApp}) {
 
   const [tribeMembers, setTribeMembers] = useState([])
   const [tribeName, setTribeName] = useState('')
@@ -23,8 +25,18 @@ function Chat({user, tribes}) {
   const [messageText, setMessageText] = useState('')
   const [checkMessages, setCheckMessages] = useState(false)
 
+let userID = user.id
+// console.log(tribes[0].id);
+// console.log(tribeMembers)
 
-// console.log(user.bonds[0].id);
+let broadcastObject = {
+  room: tribes[0].id, 
+  users: tribeMembers, 
+  messages: tribeMessages
+} 
+
+// console.log(tribes[0].id);
+// console.log(tribeMembers);
 
   function handleSetMemberID(id) {
     setMemberID(id)
@@ -68,9 +80,11 @@ function Chat({user, tribes}) {
   },[]);
 
   let MappedMessages = tribeMessages.map(m => {
+    // console.log(m.created_at);
     return (
       <ChatMessage 
       key={m.id}
+      time={m.created_at}
       text={m.text}
       username={m.user.username}
       messageUserID={m.user.id}
@@ -117,6 +131,7 @@ function Chat({user, tribes}) {
     .then(resp => resp.json())
     .then(data => {
       setTribeMessages(data)
+      console.log(data);
     })
   }
   
@@ -159,7 +174,7 @@ function Chat({user, tribes}) {
 
     function createNewMessage(e) {
       e.preventDefault()
-      setCheckMessages(!checkMessages)
+      console.log(checkMessages);
       setMessageText('')
 
       fetch("/messages", {
@@ -173,7 +188,9 @@ function Chat({user, tribes}) {
           bond_id: user.bonds[0].id
         })
       }).then(resp => resp.json())
-      .then(data => console.log(data))
+      .then(data =>  {
+       setCheckMessages(!checkMessages)
+        console.log(data)})
     }
 
   return (
@@ -228,6 +245,9 @@ function Chat({user, tribes}) {
       </div>
 
 
+      <ChatWebSocket userID={userID} broadcastObject={broadcastObject} cableApp={cableApp} />
+    
+      
 
     </div>
   )

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
 
+
   # get "/users", to: "users#index"
 
   get "/user_messages/:id", to: "messages#user_messages"

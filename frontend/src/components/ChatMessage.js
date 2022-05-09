@@ -2,17 +2,18 @@ import React, {useState} from 'react'
 import "./ChatMessage.css"
 
 
-function ChatMessage({text, username, userID, messageUserID}) {
-  const [chatClassName, setChatClassName] = useState(messageUserID !== userID ? "ChatMessageItem" : "UserChatMessageItem")
-  // console.log(userID);
-  // console.log(messageUserID);
+function ChatMessage({text, username, userID, messageUserID, time}) {
+  const [chatClassName] = useState(messageUserID !== userID ? "ChatMessageItem" : "UserChatMessageItem")
+ 
+  // let x = time.split("T")[1].split(".")[0];
+  
   return (
     <>
     <div className={chatClassName}>
      <p className='ChatMessageUsername'>{username}</p>
       <div className='ChatMessageDetails'>
         {text}
-      {/* <div className='MessageTime'>11:34</div>  */}
+      {/* <div className='MessageTime'>{x}</div>  */}
       </div>
     </div>
     </>

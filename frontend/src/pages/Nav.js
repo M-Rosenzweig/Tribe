@@ -22,7 +22,7 @@ function Nav({username, email, setUserFunction}) {
             email: ''
           }
         );
-        console.log(username);
+        // console.log(username);
       }
     });
   }

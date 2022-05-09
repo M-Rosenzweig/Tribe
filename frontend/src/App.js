@@ -25,10 +25,8 @@ function App({ cableApp }) {
   })
 
   
-  const [allUserTribes, setAllUserTribes] = useState([user.s_tribes])
-  const [currentTribe, setCurrentTribe] = useState(user.s_tribes[0].id)
-  const [currentUsers, setCurrentUsers] = useState([])
-  // const [currentTribeUsers, setCurrentTribeUsers]
+  // const [allUserTribes, setAllUserTribes] = useState([])
+  // const [currentTribe, setCurrentTribe] = useState('')
 
   // console.log(allUserTribes)
   // console.log(currentUsers)
@@ -50,10 +48,18 @@ function App({ cableApp }) {
     // auto-login
     fetch("/me").then((resp) => {
       if (resp.ok) {
-        resp.json().then((userData) => setUser(userData));
+        resp.json().then((userData) => setUser(userData))
+        // .then(handleTribeDetails());
       }
     });
   }, []);
+
+  // function handleTribeDetails() {
+  //   console.log('vibes');
+  //   setAllUserTribes([user.s_tribes])
+  //   setCurrentTribe(user.s_tribes[0].id)
+  // }
+
 
   function setUserFunction() {
     setUser({
