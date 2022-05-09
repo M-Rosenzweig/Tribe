@@ -14,6 +14,8 @@ gem "puma", "~> 5.0"
 
 gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
+gem 'fast_jsonapi'
+
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"

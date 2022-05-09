@@ -1,12 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./ChatMessage.css"
 
 
-function ChatMessage() {
+function ChatMessage({text, username, userID, messageUserID}) {
+  const [chatClassName, setChatClassName] = useState(messageUserID !== userID ? "ChatMessageItem" : "UserChatMessageItem")
+  // console.log(userID);
+  // console.log(messageUserID);
   return (
-    <div className='ChatMessageItem'>
-      hello <div className='MessageTime'>11:34</div> 
+    <>
+    <div className={chatClassName}>
+     <p className='ChatMessageUsername'>{username}</p>
+      <div className='ChatMessageDetails'>
+        {text}
+      {/* <div className='MessageTime'>11:34</div>  */}
+      </div>
     </div>
+    </>
+ 
   )
 }
 

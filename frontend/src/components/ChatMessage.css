@@ -1,7 +1,7 @@
 .ChatMessageItem {
     display: flex;
     align-items: center;
-    float: left;
+    /* float: left; */
     text-overflow: clip;
     font-size: 137%;
     font-weight: 400;
@@ -10,17 +10,52 @@
     min-width: 8%;
     /* max-width:50%; */
     width: fit-content;
+    min-width: 20%;
     max-width: 70%;
     text-align: start;
     margin-left:2.8%;
-    margin-top:1%;
+    /* margin-top:1%; */
     margin-bottom:1%;
     border-radius: 20px;
     padding: 1%;
 }
 
+.UserChatMessageItem {
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-end; */
+    text-overflow: clip;
+    font-size: 137%;
+    font-weight: 400;
+    background-color: green ;
+    color: black;
+    min-width: 8%;
+    /* max-width:50%; */
+    width: fit-content;
+    min-width: 20%;
+    max-width: 70%;
+    text-align: start;
+    margin-left:2.8%;
+    /* margin-top:1%; */
+    margin-bottom:1%;
+    border-radius: 20px;
+    padding: 1%;
+}
+
+.ChatMessageUsername{
+    margin-bottom:25%;
+    font-size: small;
+    justify-content: flex-end;
+    /* align-items: left; */
+}
+
+.ChatMessageDetails {
+    display: flex;
+    /* justify-content: flex-end; */
+}
 .MessageTime {
     font-size: small;
-    margin-top: 10%;
-    margin-left: 25%;
+    
+    /* margin-left: 10%; */
+    
 }

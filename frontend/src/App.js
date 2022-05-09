@@ -13,7 +13,7 @@ import { Route, Routes } from "react-router-dom";
 
 
 
-function App() {
+function App({ cableApp }) {
 
   const [user, setUser] = useState({
     username:"",
@@ -22,8 +22,29 @@ function App() {
     id: '',
     s_tribes:['']
 
-  }
-  )
+  })
+
+  
+  const [allUserTribes, setAllUserTribes] = useState([user.s_tribes])
+  const [currentTribe, setCurrentTribe] = useState(user.s_tribes[0].id)
+  const [currentUsers, setCurrentUsers] = useState([])
+  // const [currentTribeUsers, setCurrentTribeUsers]
+
+  // console.log(allUserTribes)
+  // console.log(currentUsers)
+  // let tribeId = user.s_tribes[0].id
+
+  // useEffect(() => {
+  //   {
+  //     fetch("/s_tribes/" + tribeId)
+  //     .then(resp => resp.json())
+  //     .then(data => {
+  //     setCurrentUsers(data.users)
+  //     console.log('vibes');
+  //     })
+
+  //   }
+  // }, [user])
 
   useEffect(() => {
     // auto-login
@@ -61,7 +82,7 @@ function App() {
      <Route path="/login" element={<Login />}/>
      <Route path="/signUp" element={<SignUp />}/>
      <Route path="/myMind" element={user.id !== '' && <MyMind user={user} tribes={user.s_tribes} />}/>
-     <Route path="/chat" element={user.id !== '' && <Chat user={user} tribes={user.s_tribes} />}/>
+     <Route path="/chat" element={user.id !== '' && <Chat cableApp={cableApp} user={user} tribes={user.s_tribes} />}/>
 
      <Route path="/myBooks" element={<MyBooks />}/>
      <Route path="/friendsBooks" element={<FriendsBooks />}/>

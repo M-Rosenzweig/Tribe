@@ -7,8 +7,12 @@ Rails.application.routes.draw do
   resources :s_tribes
   # resources :users, only:[:index, :update]
   resources :sessions, only:[:create]
+  mount ActionCable.server => '/cable'
 
-  get "/index", to: "users#index"
+
+  # get "/users", to: "users#index"
+
+  get "/user_messages/:id", to: "messages#user_messages"
 
   post "/new_tribe", to: "users#new_tribe"
   post "/join_tribe", to: "users#join_tribe"

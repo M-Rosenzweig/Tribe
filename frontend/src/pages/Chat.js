@@ -19,9 +19,12 @@ function Chat({user, tribes}) {
   const [memberID, setMemberID] = useState(user.id)
   const [memberName, setMemberName] = useState(user.username)
   const [energy, setEnergy] = useState(user.energy)
+  const [tribeMessages, setTribeMessages] = useState([])
+  const [messageText, setMessageText] = useState('')
+  const [checkMessages, setCheckMessages] = useState(false)
 
 
-
+// console.log(user.bonds[0].id);
 
   function handleSetMemberID(id) {
     setMemberID(id)
@@ -64,6 +67,19 @@ function Chat({user, tribes}) {
     });
   },[]);
 
+  let MappedMessages = tribeMessages.map(m => {
+    return (
+      <ChatMessage 
+      key={m.id}
+      text={m.text}
+      username={m.user.username}
+      messageUserID={m.user.id}
+      userID ={user.id}
+      />
+    )
+  })
+  // {tribeMembers.filter(member => member.id !== user.id)
+  //   .map(member => <MemberCard key={member.id} member={member}/>)}
   let mappedPriorities = userPriorities.map(pri => {
     //  console.log(p)
      return (
@@ -85,14 +101,24 @@ function Chat({user, tribes}) {
     )
   })
 
+  // console.log(checkMessages);
 
   useEffect(() => {
     if (tribes[0]){
       fetchAndPopulate(tribes[0].id)
+      fetchAndPopulateMessages(tribes[0].id)
       setTribeName(tribes[0].name)
+      // setTribeMessages(tribes[0])
     }
-  }, [tribes])
-
+  }, [checkMessages]) 
+  // when current tribe changes then this needs to change to acomadate the new tribe id fetch 
+  function fetchAndPopulateMessages(TribeId) {
+    fetch("/messages/" + TribeId)
+    .then(resp => resp.json())
+    .then(data => {
+      setTribeMessages(data)
+    })
+  }
   
   function fetchAndPopulate(TribeId){
     fetch("/s_tribes/" + TribeId)
@@ -126,30 +152,52 @@ function Chat({user, tribes}) {
       }
     }
 
+    function handleNewMessageState(e) {
+      setMessageText(e.target.value)
+      // console.log(messageText);
+    }
+
+    function createNewMessage(e) {
+      e.preventDefault()
+      setCheckMessages(!checkMessages)
+      setMessageText('')
+
+      fetch("/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          user_id: user.id,
+          text: messageText, 
+          bond_id: user.bonds[0].id
+        })
+      }).then(resp => resp.json())
+      .then(data => console.log(data))
+    }
+
   return (
     <div className='chatMaster' >
 
       <div className='ChatMain' >
 
         <div className='MessagesArea'>
+          {MappedMessages}
           {/*
-           Ok Lets just think through how a chat works in my own words and then get to 
-           work on creating it. 
-
-           This tribe has an array of messages. These messages belong to different users. 
-           we want to call all of the created messages in order of their creation and mapped them into the ChatMessage Component. 
-
            When we create a new message that changes the web socket and it knows to do another fetch to give the new information and places it in order
            
 
            */}
-          <ChatMessage/>
+          {/* <ChatMessage/> */}
         </div>
 
         <div className='ChatInputArea'>
-          <button className='AddMedia'>+</button>
-           <input className='ChatInputBox' placeholder='type a messge'></input>
-           <button className='ChatSendMessage'><BiSend/></button>
+          <form className='ChatInput' onSubmit={createNewMessage}>
+            <button className='AddMedia'>+</button>
+            <input className='ChatInputBox' placeholder='type a messge' value={messageText} onChange={handleNewMessageState}></input>
+            <button className='ChatSendMessage'><BiSend/></button>
+          </form>
+     
 
         </div>
 
