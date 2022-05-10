@@ -24,6 +24,7 @@ function Chat({user, tribes, cableApp}) {
   const [tribeMessages, setTribeMessages] = useState([])
   const [messageText, setMessageText] = useState('')
   const [checkMessages, setCheckMessages] = useState(false)
+  const [terneryBell, setTerneryBell] = useState(false)
 
 let userID = user.id
 // console.log(tribes[0].id);
@@ -82,9 +83,9 @@ let broadcastObject = {
       }
     });
   },[]);
-
+  console.log(terneryBell);
   let MappedMessages = tribeMessages.map(m => {
-    // console.log(m.created_at);
+    // console.log(m.user.energy);
     return (
       <ChatMessage 
       key={m.id}
@@ -93,6 +94,9 @@ let broadcastObject = {
       username={m.user.username}
       messageUserID={m.user.id}
       userID ={user.id}
+      energy ={m.user.energy}
+      terneryBell={terneryBell}
+      userEnergies={user.energy}
       />
     )
   })
@@ -153,6 +157,8 @@ let broadcastObject = {
     }
 
     function toggleTheUserEnergy() {
+      setTerneryBell(!terneryBell)
+
       fetch(`/update/${memberID}`, {
         method: "PATCH",
         headers: {

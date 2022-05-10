@@ -1,11 +1,12 @@
 .ChatMessageItem {
-  background-color: #fbfaf5;
+  /* background-color: #fbfaf5; */
+  background-color:#FFFAFA;
   color: black;
   width: fit-content;
   border-radius: 20px;
-  margin-bottom: 1%;
+  margin-bottom: 2%;
   max-width: 70%;
-  margin-left: 2.8%;
+  margin-left: 6.8%;
   text-align: start;
   padding: 1%;
   font-size: 100%;
@@ -27,7 +28,7 @@
     min-width: 20%;
     max-width: 70%;
     text-align: start;
-    margin-left:2.8%; */
+    margin-left:6.8%; */
   /* margin-top:1%; */
   /* margin-bottom:1%;
     border-radius: 20px; */
@@ -39,9 +40,9 @@
   color: black;
   width: fit-content;
   border-radius: 20px;
-  margin-bottom: 1%;
+  margin-bottom: 2%;
   max-width: 70%;
-  margin-right: 2.8%;
+  margin-right: 6.8%;
   text-align: start;
   padding: 1%;
   font-size: 100%;
@@ -90,7 +91,7 @@
 
 .ChatTextDetails {
   margin-top: 9px;
-  max-width: 45rem;
+  max-width: 39rem;
   overflow-wrap: break-word;
   /* font-size: 111%; */
 }
