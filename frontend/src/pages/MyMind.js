@@ -17,7 +17,9 @@ function MyMind({user, tribes}) {
   const [userPriorities, setUserPriorites] = useState([])
   const [userWorries, setUserWorries] = useState([])
   
-
+  useEffect(() => {
+    document.body.style.overflow = 'unset'
+  },[])
 
   // console.log(energy);
   let ID = user.id

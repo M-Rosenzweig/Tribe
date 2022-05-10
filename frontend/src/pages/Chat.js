@@ -29,6 +29,10 @@ let userID = user.id
 // console.log(tribes[0].id);
 // console.log(tribeMembers)
 
+useEffect(() => {
+  document.body.style.overflow = 'hidden'
+},[])
+
 let broadcastObject = {
   room: tribes[0].id, 
   users: tribeMembers, 
