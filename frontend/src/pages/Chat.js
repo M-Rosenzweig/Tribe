@@ -131,7 +131,7 @@ let broadcastObject = {
     .then(resp => resp.json())
     .then(data => {
       setTribeMessages(data)
-      console.log(data);
+      // console.log(data);
     })
   }
   

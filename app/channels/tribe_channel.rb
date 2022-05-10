@@ -1,6 +1,6 @@
 class TribeChannel < ApplicationCable::Channel
     def subscribed
-      byebug
+      # byebug
       @room = STribe.find_by(id: params[:room])
       @users = params[:users]
       @messages = params[:messages]

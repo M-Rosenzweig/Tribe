@@ -2,8 +2,8 @@
     /* background-image: url(../images/Tribb.jpg) ; */
     /* background: linear-gradient(#157BD0, #ADD8FF); */
   background: linear-gradient(#282d32, #424950);
-
-    height: auto;
+    
+    height: 100vh;
     /* margin:0%; */
     display: grid;
     grid-template-columns: 73.5% auto;
@@ -17,6 +17,9 @@
     grid-row-end: 5;
     display: grid;
     grid-template-rows: auto 9%;
+    overflow-y: auto;
+    max-height: 95vh;
+
     /* flex-direction: column;  */
     /* align-items:flex-end; */
 
@@ -28,6 +31,7 @@
     align-items: center;
     display: flex;
     flex-direction: row;
+    margin-top:0.4%;
 }
 
 
@@ -57,6 +61,12 @@
     height: 5vh;
 }
 
+.ChatInputArea {
+    position: fixed;
+    bottom:0%;
+    width: 61.5%;
+}
+
 .ChatSendMessage {
     cursor: pointer;
     width: fit-content;
@@ -74,8 +84,16 @@
 .MessagesArea {
     display: flex;
     flex-direction: column;
-    align-self: end;
-    /* justify-content: flex-end; */
+    /* align-items: flex-end; */
+    /* align-self: end; */
+    /* float:right; */
+    justify-content: flex-end;
+}
+
+.MessagesArea > .UserChatMessageItem {
+    /* align-items: flex-end; */
+    /* color: #FBFAF5; */
+    float:right;
 }
 
 
@@ -90,7 +108,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    
 }
 
 

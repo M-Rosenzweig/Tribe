@@ -14,7 +14,6 @@ class MessagesController < ApplicationController
         bond = Bond.find(params[:id])
         messages = bond.user.messages
         render json: messages
-
     end
 
     def create 
