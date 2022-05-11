@@ -9,7 +9,6 @@ function ChatMessage({text, username, userID, messageUserID, time, energy, terne
   // console.log(userEnergies);
 
   useEffect(() => {
-    console.log('vibes');
     if(energy === 1){
       setEnergyClass("EnergyWeakColor")
     } else if(energy ===2) {

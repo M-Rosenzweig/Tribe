@@ -95,3 +95,26 @@
   overflow-wrap: break-word;
   /* font-size: 111%; */
 }
+
+.EnergyWeakColor {
+  color: rgb(131, 26, 44);
+  font-weight: 600;
+}
+
+.EnergyDecentColor{
+  /* background-color: #0526e0; */
+  color: #157BD0;
+  font-weight: 600;
+
+}
+
+.EnergySolidColor {
+  color: aquamarine;
+  font-weight: 600;
+}
+
+.EnergyAwesomeColor {
+  color: rgb(15, 255, 80);
+  font-weight: 600;
+
+}

@@ -10,25 +10,3 @@
     
 }
 
-.EnergyWeakColor {
-    color: rgb(131, 26, 44);
-    font-weight: 500;
-}
-
-.EnergyDecentColor{
-    /* background-color: #0526e0; */
-    color: #157BD0;
-    font-weight: 500;
-
-}
-
-.EnergySolidColor {
-    color: aquamarine;
-    font-weight: 500;
-}
-
-.EnergyAwesomeColor {
-    color: rgb(15, 255, 80);
-    font-weight: 500;
-
-}

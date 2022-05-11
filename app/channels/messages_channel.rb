@@ -1,6 +1,7 @@
 class MessagesChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "some_channel"
+    @tribe = STribe.find(params[:tribe])
+    stream_for tribe
   end
 
   def unsubscribed

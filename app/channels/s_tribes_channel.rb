@@ -1,20 +1,19 @@
-class TribeChannel < ApplicationCable::Channel
+class STribesChannel < ApplicationCable::Channel
     def subscribed
       # byebug
-      @room = STribe.find_by(id: params[:room])
-      @users = params[:users]
-      @messages = params[:messages]
+      @s_tribe = STribe.find_by(id: params[:tribe_id])
+      @users = @s_tribe.users
+      @messages = @s_tribe.messages
       @user = User.find_by(id: params[:user])
-      stream_for @room
-      appear
+      stream_for @s_tribe
     end
 
-    def appear
+    def received
       @user.update(online: "online")
-      TribeChannel.broadcast_to(@room, {
-        room: @room,
-        users: @users, 
-        messages: @messages
+      TribeChannel.broadcast_to(@s_tribe, {
+        tribe: @s_tribe,
+        user: @user, 
+        messages: @s_tribe.messages
     })
     end
 

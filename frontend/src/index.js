@@ -4,20 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
-import actionCable from "actioncable";
 import * as serviceWorker from "./serviceWorker";
 
 
 
-const CableApp = {};
-
-CableApp.cable = actionCable.createConsumer("ws://localhost:3000/cable");
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <App cableApp={CableApp} />
+    <App />
   </BrowserRouter>
 );
 
