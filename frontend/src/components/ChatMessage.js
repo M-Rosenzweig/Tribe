@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import "./ChatMessage.css"
+import timeFormatter from '24hto12hformat';
 
 
 function ChatMessage({text, username, userID, messageUserID, time, energy, terneryBell, userEnergies}) {
@@ -42,6 +43,10 @@ function ChatMessage({text, username, userID, messageUserID, time, energy, terne
   // },[terneryBell])
 
   let x = time.split("T")[1].split(".")[0];
+  
+  
+
+
   // console.log(energyClass);
 
   return (
@@ -49,7 +54,7 @@ function ChatMessage({text, username, userID, messageUserID, time, energy, terne
      {/* { transparent !== 'TransparentName' ? {username} : null} */}
     <div className={chatClassName}>
       <div id='ChatUsername' className='MessageDetails'>
-        <div id={transparent} className={energyClass}> {username} </div> <div className={targetTime}>  {x} </div>  
+        <div id={transparent} className={energyClass}> {username} </div> <div className={targetTime}>  {timeFormatter(x)} </div>  
       </div>
       <div className={textDetails}> 
         {text}
