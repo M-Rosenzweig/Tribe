@@ -64,7 +64,7 @@
 .ChatInputArea {
     position: fixed;
     bottom:0%;
-    width: 61.5%;
+    width: 61.7%;
 }
 
 .ChatSendMessage {
@@ -94,6 +94,11 @@
     /* align-items: flex-end; */
     /* color: #FBFAF5; */
     float:right;
+}
+
+.AutoScrollDiv {
+    /* float:"left";
+    clear: "both"; */
 }
 
 

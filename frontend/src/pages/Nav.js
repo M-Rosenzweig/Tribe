@@ -46,15 +46,21 @@ function Nav({username, email, setUserFunction}) {
      <NavLink to="/myBooks"><h2> <GiBookshelf/> My Shelf </h2> </NavLink> 
      <NavLink to='/voting'><h2><RiSailboatLine/> Challenges</h2> </NavLink> 
      {/* <FiLogOut/> */}
-   
-     
-    <NavLink to='/login'> <h2 className='Logout' onClick={handleLogout}> {username ? <MdLogout/> : null} { username ? "Logout" : null}</h2> </NavLink>
-    <NavLink to='/login'><h2 className='Login' onClick={handleLogin}> <MdLogout/>{ username ? null : "Login"}</h2> </NavLink>
+
+     <div className='NavOptions2'> 
+     <NavLink to='/login'> <h2 className='Logout' onClick={handleLogout}> {username ? <MdLogout/> : null} { username ? "Logout" : null}</h2> </NavLink>
+    <NavLink to='/login'><h2 className='Login' onClick={handleLogin}> {username ? null : <MdLogout/> } { username ? null : "Login"}</h2> </NavLink>
     <h3 className='NavUserName'>{username}</h3>
     <h3 className='NavUserEmail'>{email}</h3>
+     </div>
+   
+     </div>
+
+    
+   
     
 
-      </div>
+  
  
 
     </div>

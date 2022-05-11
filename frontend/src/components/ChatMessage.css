@@ -1,6 +1,9 @@
 .ChatMessageItem {
   /* background-color: #fbfaf5; */
-  background-color:#FFFAFA;
+  /* background-color:#FFFAFA; */
+  /* background-color:  #F5F5F0;
+   */
+  background-color: 	#d8d8d8;
   color: black;
   width: fit-content;
   border-radius: 20px;
@@ -36,7 +39,8 @@
 }
 
 .UserChatMessageItem {
-  background-color: #25d366;
+  /* background-color: #25d366; */
+  background-color:#218aff;
   color: black;
   width: fit-content;
   border-radius: 20px;
@@ -119,12 +123,13 @@
 }
 
 .EnergySolidColor {
-  color: aquamarine;
+  color: #008578;
   font-weight: 600;
 }
 
 .EnergyAwesomeColor {
-  color: rgb(15, 255, 80);
+  /* color: rgb(15, 255, 80); */
+  color:green;
   font-weight: 600;
 }
 

@@ -46,6 +46,7 @@
     margin-top: 0%;
     font-size: 118%;
     text-decoration: none;
+    margin-bottom:auto;
     /* text-decoration-color: none;  */
 }
 
@@ -68,17 +69,40 @@
 } */
 
 .Logout{
-    margin-top: 90%;
+    margin-top: auto;
     font-family: Montserrat, sans-serif;
     cursor: pointer;
+    margin-bottom: auto;
 }
 
 .NavUserName {
-    margin-top: 25%;
-    margin-bottom:2%;
+    /* margin-top: auto; */
+    /* margin-bottom:auto; */
 }
 
 .NavUserEmail {
-    margin-top: 2%;
+    /* margin-top: auto; */
+    /* margin-bottom:auto; */
+}
+
+.NavOptions2 > a {
+    margin-top:auto;
+    text-decoration: none;
+    color:white;
+}
+
+.NavOptions2 > a:hover {
+    color:#157BD0;
+}
+
+.NavOptions2 {
+    font-family: Montserrat, sans-serif;
+    text-align: start;
+    margin-top: 21rem;
+    /* margin-left: 5%; */
+    /* margin-top: 0%; */
+    /* font-size: 118%; */
+    text-decoration: none;
+    margin-bottom:auto;
 }
 

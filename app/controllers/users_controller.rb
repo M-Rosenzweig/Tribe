@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     private
 
     def create_user_params
-        params.permit(:username, :password, :energy, :email)
+        params.permit(:username, :password, :energy, :email, :online)
     end
 
     def stribes_params

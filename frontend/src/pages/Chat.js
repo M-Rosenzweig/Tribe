@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import MembersBarCard from "../components/MembersBarCard";
 import UserBarCard from "../components/UserBarCard";
 import ChatMessage from "../components/ChatMessage";
@@ -28,6 +28,14 @@ function Chat({ user, tribes }) {
   let userID = user.id;
   // console.log(tribes[0].id);
   // console.log(tribeMembers)
+
+  useEffect(() => {
+    scrollToBottomInitial()
+  },[tribeMessages])
+
+  // useEffect(()=> {
+  //   document.getElementById('bottom').scrollIntoView();
+  // },[])
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -67,6 +75,8 @@ function Chat({ user, tribes }) {
       if (resp.ok) {
         resp.json().then((data) => {
           setUserPriorites(data);
+          scrollToBottom()
+
         });
       }
     });
@@ -122,17 +132,16 @@ function Chat({ user, tribes }) {
   }, []);
   // when current tribe changes then this needs to change to acomadate the new tribe id fetch
   function fetchAndPopulateMessages(TribeId) {
-    console.log("good Vibes");
-    fetch("/messages/" + TribeId)
+    fetch(`/messages/${TribeId}`)
       .then((resp) => resp.json())
       .then((data) => {
         setTribeMessages(data);
-        console.log(data);
+        // console.log(data);
       });
   }
 
   function fetchAndPopulate(TribeId) {
-    fetch("/s_tribes/" + TribeId)
+    fetch(`/s_tribes/ ${TribeId}`)
       .then((resp) => resp.json())
       .then((data) => {
         setTribeMembers(data.users);
@@ -172,7 +181,7 @@ function Chat({ user, tribes }) {
 
   function createNewMessage(e) {
     e.preventDefault();
-    console.log(checkMessages);
+    // console.log(checkMessages);
     setMessageText("");
 
     fetch("/messages", {
@@ -189,14 +198,35 @@ function Chat({ user, tribes }) {
       .then((resp) => resp.json())
       .then((data) => {
         // setCheckMessages(!checkMessages);
-        console.log(data);
+        // console.log(data);
       });
   }
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  
+  const scrollToBottomInitial = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "auto" })
+  }
+
+
+
+const messagesEndRef = useRef(null)
+  
 
   return (
     <div className="chatMaster">
       <div className="ChatMain">
-        <div className="MessagesArea">{MappedMessages}</div>
+        <div className="MessagesArea">
+          
+          {MappedMessages}
+          <div id="bottom" ref={messagesEndRef}  className="AutoScrollDiv">
+
+          </div>
+        
+        </div>
 
         <div className="ChatInputArea">
           <form className="ChatInput" onSubmit={createNewMessage}>
@@ -248,7 +278,7 @@ function Chat({ user, tribes }) {
 
       <div className="ToggleSection">
         <button onClick={handleShowToggle} className="ToggleDeets">
-          {show ? "Priorites" : "Worries"}
+          {show ? "Priorities" : "Worries"}
         </button>
       </div>
 
@@ -260,6 +290,7 @@ function Chat({ user, tribes }) {
         tribeId={tribes[0].id}
         updateMessages={fetchAndPopulateMessages}
         cableApp={CableApp}
+        userID={user.id}
       />
     </div>
   );

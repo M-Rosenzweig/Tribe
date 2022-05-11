@@ -79,6 +79,7 @@ function handleCreateTribe(e) {
       email: email,
       password:password,
       energy:2,
+      online:'offline',
   
       //Tribe Info
       name: tribeName,
@@ -87,7 +88,7 @@ function handleCreateTribe(e) {
   })
   .then(resp => resp.json())
   .then(data => console.log(data))
-  window.location.href = "http://localhost:4000/chat";
+  window.location.href = "http://localhost:4000/my-tribes";
 
 }
 
@@ -108,6 +109,7 @@ function handleJoinTribe(e){
       email: email,
       password:password,
       energy:2,
+      online:'offline',
 
       // Tribe Info
       code: tribePasscode
@@ -115,7 +117,7 @@ function handleJoinTribe(e){
   })
   .then(resp => resp.json())
   .then(data => console.log(data))
-  window.location.href = "http://localhost:4000/chat";
+  window.location.href = "http://localhost:4000/my-tribes";
 
 }
   // alert('Hello - depending on errors or not send message')
