@@ -96,6 +96,16 @@
   /* font-size: 111%; */
 }
 
+.UserChatTextDetails {
+  margin-top: 9px;
+  max-width: 39rem;
+  overflow-wrap: break-word;
+  margin-top:0%
+  /* margin-bottom: 5px; */
+  /* color:white; */
+  /* font-size: 111%; */
+}
+
 .EnergyWeakColor {
   color: rgb(131, 26, 44);
   font-weight: 600;
@@ -116,5 +126,14 @@
 .EnergyAwesomeColor {
   color: rgb(15, 255, 80);
   font-weight: 600;
+}
 
+ #TransparentName {
+  color:transparent;
+  display:none;
+  margin-bottom: -2%;
+} 
+
+.ChatTime {
+  margin-left:auto;
 }

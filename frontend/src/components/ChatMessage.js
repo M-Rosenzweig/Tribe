@@ -5,8 +5,16 @@ import "./ChatMessage.css"
 function ChatMessage({text, username, userID, messageUserID, time, energy, terneryBell, userEnergies}) {
   const [chatClassName] = useState(messageUserID !== userID ? "ChatMessageItem" : "UserChatMessageItem")
   const [energyClass, setEnergyClass] = useState('')
+  const [transparent, setTransparent] = useState('')
+  const [targetTime, setTargetTime] = useState('')
+  const [textDetails, setTextDetails] = useState('ChatTextDetails')
 
-  // console.log(userEnergies);
+  // console.log(userEnergies)
+  useEffect(() => {
+    messageUserID == userID ? setTransparent('TransparentName') : setTransparent('')
+    messageUserID == userID ? setTargetTime('ChatTime') : setTargetTime('')
+    messageUserID == userID ? setTextDetails('UserChatTextDetails') : setTextDetails('ChatTextDetails')
+  })
 
   useEffect(() => {
     if(energy === 1){
@@ -38,11 +46,12 @@ function ChatMessage({text, username, userID, messageUserID, time, energy, terne
 
   return (
     <>
+     {/* { transparent !== 'TransparentName' ? {username} : null} */}
     <div className={chatClassName}>
       <div id='ChatUsername' className='MessageDetails'>
-        <div className={energyClass}> {username}</div> <div>  {x} </div>  
+        <div id={transparent} className={energyClass}> {username} </div> <div className={targetTime}>  {x} </div>  
       </div>
-      <div className='ChatTextDetails'> 
+      <div className={textDetails}> 
         {text}
       </div>
     </div>
