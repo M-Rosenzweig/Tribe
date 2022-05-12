@@ -5,6 +5,8 @@ import { MdLogout } from "react-icons/md";
  import {FaCampground} from "react-icons/fa"
  import { FiCoffee} from "react-icons/fi"
  import { GiBookshelf} from "react-icons/gi"
+//  import { CgProfile} from "react-icons/cg"
+ 
  
 
  
@@ -50,7 +52,7 @@ function Nav({username, email, setUserFunction}) {
      <div className='NavOptions2'> 
      <NavLink to='/login'> <h2 className='Logout' onClick={handleLogout}> {username ? <MdLogout/> : null} { username ? "Logout" : null}</h2> </NavLink>
     <NavLink to='/login'><h2 className='Login' onClick={handleLogin}> {username ? null : <MdLogout/> } { username ? null : "Login"}</h2> </NavLink>
-    <h3 className='NavUserName'>{username}</h3>
+    <h3 className='NavUserName'>  {username} </h3>
     <h3 className='NavUserEmail'>{email}</h3>
      </div>
    

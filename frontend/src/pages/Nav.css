@@ -76,6 +76,8 @@
 }
 
 .NavUserName {
+    display: flex;
+    /* justify-content: ; */
     /* margin-top: auto; */
     /* margin-bottom:auto; */
 }

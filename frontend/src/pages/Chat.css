@@ -11,6 +11,22 @@
     color:white;
 }
 
+.chatMasterLight {
+    background-image: url(../images/whiteChatBackground.jpg) ;
+    /* background: linear-gradient(#157BD0, #ADD8FF); */
+    /* background-color: white; */
+
+  
+    
+    height: 100vh;
+    /* margin:0%; */
+    display: grid;
+    grid-template-columns: 73.5% auto;
+    grid-template-rows: 12% auto 12% 10%;
+    color:white;
+}
+
+
 
 .ChatMain {
     grid-row-start: 2;
@@ -115,6 +131,13 @@
     align-items: center;
 }
 
+.ChatModeToggle {
+    margin-right:auto;
+    margin-left:8px;
+    font-size: larger;
+    margin-bottom: 4%;
+}
+
 
 
 .ChatSideDeets {
@@ -122,6 +145,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     /* justify-content: center; */
+    background: linear-gradient(#282d32, #424950);
     align-items: center;
     border-left: 1px solid #282d32;
     border-top: 1px solid grey;
@@ -172,6 +196,8 @@
 
 .ChatVibes1 {
     /* background-color: rgb(162, 0, 255); */
+    background: linear-gradient(#282d32, #424950);
+
     border: 1px solid #282d32;
 }
 

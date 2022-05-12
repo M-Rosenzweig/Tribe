@@ -7,6 +7,12 @@ import ChatWebSocket from "../ChatWebSocket";
 import { BiSend } from "react-icons/bi";
 import "./Chat.css";
 import actionCable from "actioncable";
+import { FaMoon } from "react-icons/fa";
+import { BsFillSunFill } from "react-icons/bs";
+// import Picker from 'emoji-picker-react';
+
+
+
 
 const CableApp = {};
 CableApp.cable = actionCable.createConsumer("ws://localhost:3000/cable");
@@ -23,7 +29,12 @@ function Chat({ user, tribes }) {
   const [tribeMessages, setTribeMessages] = useState([]);
   const [messageText, setMessageText] = useState("");
   const [checkMessages, setCheckMessages] = useState(false);
-  const [terneryBell, setTerneryBell] = useState(false);
+  const [darkMode, setDarkMode] = useState(true)
+  const [chosenEmoji, setChosenEmoji] = useState(null);
+
+  const onEmojiClick = (event, emojiObject) => {
+    setChosenEmoji(emojiObject);
+  };
 
   let userID = user.id;
   // console.log(tribes[0].id);
@@ -104,7 +115,6 @@ function Chat({ user, tribes }) {
         messageUserID={m.user.id}
         userID={user.id}
         energy={m.user.energy}
-        terneryBell={terneryBell}
         userEnergies={user.energy}
       />
     );
@@ -154,7 +164,6 @@ function Chat({ user, tribes }) {
   }
 
   function toggleTheUserEnergy() {
-    setTerneryBell(!terneryBell);
 
     fetch(`/update/${memberID}`, {
       method: "PATCH",
@@ -208,20 +217,25 @@ function Chat({ user, tribes }) {
 
   
   const scrollToBottomInitial = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "auto" })
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
 
 
 
 const messagesEndRef = useRef(null)
   
+function handleDarkMode() {
+  setDarkMode(!darkMode)
+
+}
 
   return (
-    <div className="chatMaster">
+    <div className={darkMode ? "chatMaster" : "chatMasterLight"}>
       <div className="ChatMain">
         <div className="MessagesArea">
           
           {MappedMessages}
+          
           <div id="bottom" ref={messagesEndRef}  className="AutoScrollDiv">
 
           </div>
@@ -245,6 +259,7 @@ const messagesEndRef = useRef(null)
       </div>
 
       <div className="MembersRow">
+        <div onClick={handleDarkMode} className="ChatModeToggle"> {darkMode ? <FaMoon/> : <BsFillSunFill/> } </div>
         {tribeMembers
           .filter((member) => member.id !== user.id)
           .map((member) => (

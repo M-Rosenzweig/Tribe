@@ -2,12 +2,15 @@
     "name": "tribe",
     "description": "More than a community",
     "engines": {
-      "node": ">= 14"
+        "node": ">= 14"
     },
     "scripts": {
-      "build": "npm install --prefix frontend && npm run build --prefix frontend",
-      "clean": "rm -rf public",
-      "deploy": "cp -a frontend/build/. public/",
-      "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
+        "build": "npm install --prefix frontend && npm run build --prefix frontend",
+        "clean": "rm -rf public",
+        "deploy": "cp -a frontend/build/. public/",
+        "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
+    },
+    "dependencies": {
+        "emoji-picker-react": "^3.5.1"
     }
-  }
+}
