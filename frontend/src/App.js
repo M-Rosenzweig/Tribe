@@ -83,7 +83,7 @@ function App() {
 
      <Routes>
      <Route path="/my-tribes" element={<Tribe user={user} tribes={user.s_tribes} />}/>
-     <Route path="/" element={<Login />}/>
+     <Route exact path="/" element={<Login />}/>
      <Route path="/login" element={<Login />}/>
      <Route path="/signUp" element={<SignUp />}/>
      <Route path="/myMind" element={user.id !== '' && <MyMind user={user} tribes={user.s_tribes} />}/>

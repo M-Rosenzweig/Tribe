@@ -32,9 +32,9 @@ function Chat({ user, tribes }) {
   const [darkMode, setDarkMode] = useState(true)
   const [chosenEmoji, setChosenEmoji] = useState(null);
 
-  const onEmojiClick = (event, emojiObject) => {
-    setChosenEmoji(emojiObject);
-  };
+  // const onEmojiClick = (event, emojiObject) => {
+  //   setChosenEmoji(emojiObject);
+  // };
 
   let userID = user.id;
   // console.log(tribes[0].id);
@@ -301,7 +301,7 @@ function handleDarkMode() {
       </div>
 
       <div className="ChatVibes1">
-        <h1>{tribeName}</h1>
+        <h2>{tribeName}</h2>
       </div>
 
       <ChatWebSocket

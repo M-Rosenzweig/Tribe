@@ -15,7 +15,7 @@
     /* background: linear-gradient(#157BD0, #ADD8FF); */
     /* background-color: white; */
 
-    background-size:contain;
+    /* background-size:contain; */
   
     
     height: 100vh;
@@ -47,7 +47,7 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    margin-top:0.4%;
+    margin-top:0.1%;
 }
 
 
@@ -81,6 +81,7 @@
     position: fixed;
     bottom:0%;
     width: 61.7%;
+    
 }
 
 .ChatSendMessage {
@@ -178,6 +179,7 @@
     /* border: 1px solid green; */
     display: flex;
     justify-content: center;
+    align-items: center;
 
 }
 
@@ -190,7 +192,7 @@
     background: linear-gradient(#282d32, #ADD8FF);
     /* background-color: orange; */
     cursor: pointer;
-    font-size: 170%;
+    font-size: 180%;
     width: 100%;
 }
 

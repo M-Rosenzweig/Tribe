@@ -50,9 +50,9 @@
 .logininput {
   /* background-color: rgba(238, 238, 238, 0.3);  */
   margin-bottom: 4vh;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   border-radius: 25px;
-  padding: 18px;
+  padding: 21px;
   opacity: 75%;
 }
 
@@ -67,8 +67,9 @@
 }
 
 #signup {
-  display: grid;
-  grid-template-columns: 10vw 4vw;
+  /* display: grid;
+  grid-template-columns: 12vw 5vw; */
+  display: flex;
   justify-content: center;
   padding-top: 5vh;
   padding-right: 12vh;
@@ -76,8 +77,15 @@
   color: white;
 }
 
+.NoAccount {
+  margin-left: 7%;
+}
+
 #sarea {
   font-weight: bold;
+  background-color: gray;
+  margin-left:19%;
+  font-size: auto;
   color: rgb(83, 228, 54);
   text-decoration: none;
   text-decoration-color: none;

@@ -2,13 +2,13 @@
  background-color: rgb(40, 119, 189);
  margin:1.5%;
  width: max-content;
- min-width: 85%;
+ min-width: 94%;
  max-width: 20vw;
  border-radius: 25px;
- padding:2%;
+ padding:1.2%;
  /* border:1px solid white; */
  text-align: left;
- font-size: 120%;
+ font-size: 100%;
  /* opacity: 98%; */
 }
 

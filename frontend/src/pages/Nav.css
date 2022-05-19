@@ -21,17 +21,19 @@
     /* color: rgb(252, 103, 4);
      */
     /* margin-bottom: 20%; */
-    font-size: 285%;
+    font-size: 200%;
     color:orange;
     /* color:green; */
     /* color:#157BD0; */
     font-family:cursive;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     text-align: start;
     margin-left: 5%;
     /* border-bottom-style:solid;
     border-color: white; */
 }
+
+
 
 .NavWelcome{
     margin-top:7%;
@@ -50,25 +52,28 @@
     /* text-decoration-color: none;  */
 }
 
-.NavOptions > a {
+
+a {
     text-decoration: none;
     color:white;
 }
 
-.NavOptions > a:hover {
+h2 {
+    text-decoration: none;
+}
+
+.NavOptions > h2 a:hover {
+    color:#157BD0;
+} 
+
+
+.active {
     color:#157BD0;
 }
 
-/* ::selection {
-    color:grey;
-}
-
-.NavOptions a.active a {
-    border-left: 4px solid #157BD0 ;
-    text-decoration-color: #157BD0;
-} */
-
 .Logout{
+    display: flex;
+    /* background-color: #157BD0; */
     margin-top: auto;
     font-family: Montserrat, sans-serif;
     cursor: pointer;
@@ -77,6 +82,7 @@
 
 .NavUserName {
     display: flex;
+    justify-content: space-between;
     margin-top:-5%;
        margin-left: 5%;
     /* justify-content: ; */
@@ -89,23 +95,19 @@
     margin-bottom:auto;
 }
 
-.NavOptions2 > a {
+/* .NavOptions2 > a {
     margin-top:auto;
     text-decoration: none;
     color:white;
-}
+} */
 
 .NavOptions2 > a:hover {
     color:#157BD0;
 }
 
-.NavOptions2 > a:active {
+/* .NavOptions2 > a:active {
     color:#157BD0;
-}
-
-.main-active-active {
-    color:#157BD0;
-}
+} */
 
 
 .NavOptions2 {
@@ -115,7 +117,6 @@
     margin-left: 5%;
     font-size: 98%;
     text-decoration: none;
-    max-height: 10%;
-    /* margin-bottom:auto; */
+    max-height: 9%;
 }
 

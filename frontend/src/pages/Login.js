@@ -110,7 +110,7 @@ function Login() {
               </button>
             </div>
             <div id="signup">
-              <p>Dont have an account?</p>
+              <p className="NoAccount">Dont have an account?</p>
               <Link to="/signUp">
                 {" "}
                 <p id="sarea">Sign up!</p>
