@@ -1,10 +1,9 @@
 .chatMaster {
-    /* background-image: url(../images/Tribb.jpg) ; */
+    background-image: url(../images/Dark2.jpg) ;
     /* background: linear-gradient(#157BD0, #ADD8FF); */
-  background: linear-gradient(#282d32, #424950);
-    
+  /* background: linear-gradient(#282d32, #424950); */
+    background-size:contain;
     height: 100vh;
-    /* margin:0%; */
     display: grid;
     grid-template-columns: 73.5% auto;
     grid-template-rows: 12% auto 12% 10%;
@@ -16,6 +15,7 @@
     /* background: linear-gradient(#157BD0, #ADD8FF); */
     /* background-color: white; */
 
+    background-size:contain;
   
     
     height: 100vh;
@@ -68,7 +68,7 @@
     margin-top:0%;
     float: left;
     /* background-color: #282d32; */
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     border-radius: 12px;
     /* border: none; */
     padding: 0.5%;
@@ -88,7 +88,7 @@
     width: fit-content;
     background-color: lightgreen;
     /* padding:0.4%; */
-    font-size: 180%;
+    font-size: 150%;
     border-radius: 25px;
     border-color: transparent;
     margin: 1%;
@@ -190,7 +190,7 @@
     background: linear-gradient(#282d32, #ADD8FF);
     /* background-color: orange; */
     cursor: pointer;
-    font-size: 200%;
+    font-size: 170%;
     width: 100%;
 }
 
@@ -198,6 +198,5 @@
     /* background-color: rgb(162, 0, 255); */
     background: linear-gradient(#282d32, #424950);
 
-    border: 1px solid #282d32;
 }
 

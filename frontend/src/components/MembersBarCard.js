@@ -4,7 +4,6 @@ import "./MembersBarCard.css"
 
 function MembersBarCard({ member, handleSetMemberID, handleSetMemberName, terneryBell  }) {
   const [barEnergyClass, setBarEnergyClass] = useState('')
-  console.log(terneryBell);
 
   useEffect(() => {
     switch(member.energy) {

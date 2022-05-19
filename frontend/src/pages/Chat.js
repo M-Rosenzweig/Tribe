@@ -40,9 +40,9 @@ function Chat({ user, tribes }) {
   // console.log(tribes[0].id);
   // console.log(tribeMembers)
 
-  useEffect(() => {
-    scrollToBottomInitial()
-  },[tribeMessages])
+  // useEffect(() => {
+  //   scrollToBottomInitial()
+  // },[tribeMessages])
 
   // useEffect(()=> {
   //   document.getElementById('bottom').scrollIntoView();
@@ -86,7 +86,7 @@ function Chat({ user, tribes }) {
       if (resp.ok) {
         resp.json().then((data) => {
           setUserPriorites(data);
-          scrollToBottom()
+          // scrollToBottom()
 
         });
       }
@@ -146,6 +146,7 @@ function Chat({ user, tribes }) {
       .then((resp) => resp.json())
       .then((data) => {
         setTribeMessages(data);
+        // scrollToBottom()
         // console.log(data);
       });
   }
@@ -206,8 +207,10 @@ function Chat({ user, tribes }) {
     })
       .then((resp) => resp.json())
       .then((data) => {
+        // scrollToBottom()
         // setCheckMessages(!checkMessages);
         // console.log(data);
+
       });
   }
 
@@ -216,9 +219,9 @@ function Chat({ user, tribes }) {
   }
 
   
-  const scrollToBottomInitial = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
+  // const scrollToBottomInitial = () => {
+  //   messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  // }
 
 
 
@@ -293,7 +296,7 @@ function handleDarkMode() {
 
       <div className="ToggleSection">
         <button onClick={handleShowToggle} className="ToggleDeets">
-          {show ? "Priorities" : "Worries"}
+          {show ? "Priorities" : "Blockers"}
         </button>
       </div>
 

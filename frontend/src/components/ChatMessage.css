@@ -14,7 +14,7 @@
   text-align: start;
   padding: 1%;
   font-size: 100%;
-  font-size: larger;
+  font-size: medium;
   font-weight: 400;
   
     
@@ -51,7 +51,7 @@
   text-align: start;
   padding: 1%;
   font-size: 100%;
-  font-size: larger;
+  font-size: medium;
   font-weight: 400;
   margin-left: auto;
 
@@ -72,7 +72,7 @@
 }
 
 #ChatUsername {
-  font-size: small;
+  font-size: x-small;
   display: flex;
   justify-content: space-between;
 }

@@ -11,7 +11,7 @@ function FeelingsCard({ text, id, handleFeelingDelete }) {
   }
 
   return (
-    <div  className='FeelingCard'>
+    <div  className='FeelingCard  '>
       {text} <button className='DeleteFeeling' onClick={() => handleDelete(id)} ><RiCloseCircleLine/></button>
     </div>
   )

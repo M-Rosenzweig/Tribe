@@ -1,86 +1,84 @@
 .LoginMaster {
-    display: grid;
-    grid-template-rows: 25% auto;
-    background-image: url(../images/Fire.gif) ;
-    height:100vh;
-    /* background-size: cover; */
-    
-    /* border-color:solid black; */
+  display: grid;
+  grid-template-rows: 25% auto;
+  background-image: url(../images/Fire.gif);
+  height: 100vh;
+  background-size: cover;
 }
 
 .LoginHeadings {
-    color:white;
-   /* background:black; */
-   /* background: linear-gradient(#157BD0, #ADD8FF);  */
+  color: white;
 }
 
 #LoginTitle {
-    font-size: 600%;
-    margin-bottom: 0;
-    margin-top: 3%;
+  font-size: 600%;
+  margin-bottom: 0;
+  margin-top: 3%;
 }
 
-#LoginSubtitle{
-    margin-top: 1;
+#LoginSubtitle {
+  margin-top: -0.2%;
 }
 
-.LoginForm{
-    /* background: linear-gradient(#ADD8FF, rgb(248, 212, 165)); */
-    display: flex;
-    justify-content:center;
-    /* display: grid;
+.LoginForm {
+  /* background: linear-gradient(#ADD8FF, rgb(248, 212, 165)); */
+  display: flex;
+  justify-content: center;
+  /* display: grid;
     grid-template-columns: 1fr 1fr; */
 }
 
 #loginbox {
-    margin-top: 10vh;
-    padding-top: 4vh;
-    height: 50vh;
-    width: 50vw;
-    /* background-color: rgb(236, 96, 96); */
-    border-radius: 5px;
-    
+  margin-top: 10vh;
+  padding: 4vh;
+  height: 50vh;
+  width: 50vw;
+  /* background-color: rgb(236, 96, 96); */
+  border-radius: 5px;
 }
 
 #logins {
-    display: grid;
-    grid-template-columns: 50vh;
-    grid-template-rows: 10vh 10vh 10vh;
-    justify-content: center;
-    height: 40%;
-    width: 100%;
+  display: grid;
+  /* background-color: #157bd0; */
+  grid-template-columns: 50vh;
+  grid-template-rows: 10vh 10vh 10vh;
+  justify-content: center;
+  height: 40%;
+  width: 100%;
 }
 
 .logininput {
-    /* background-color: rgba(238, 238, 238, 0.3);  */
-    margin-bottom: 4vh;
-    font-size: 1.3rem;
-    border-radius: 25px;
-    padding: 18px;
-    opacity: 75%;
+  /* background-color: rgba(238, 238, 238, 0.3);  */
+  margin-bottom: 4vh;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  padding: 18px;
+  opacity: 75%;
 }
 
 #loginbutton {
-    background-color: #157BD0;
-    margin-top: -1vh;
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
+  background-color: #157bd0;
+  padding: 0.1vh;
+  margin-top: -1vh;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+
 }
 
 #signup {
-    display: grid;
-    grid-template-columns: 10vw 4vw;
-    justify-content: center;
-    padding-top: 5vh;
-    padding-right: 12vh;
-    font-family: Montserrat, sans-serif;
-    color:white;
+  display: grid;
+  grid-template-columns: 10vw 4vw;
+  justify-content: center;
+  padding-top: 5vh;
+  padding-right: 12vh;
+  font-family: Montserrat, sans-serif;
+  color: white;
 }
 
 #sarea {
-    font-weight: bold;
-    color:rgb(83, 228, 54);
-    text-decoration: none;
-    text-decoration-color: none;
+  font-weight: bold;
+  color: rgb(83, 228, 54);
+  text-decoration: none;
+  text-decoration-color: none;
 }

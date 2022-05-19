@@ -44,9 +44,9 @@
     text-align: start;
     margin-left: 5%;
     margin-top: 0%;
-    font-size: 118%;
+    font-size: 98%;
     text-decoration: none;
-    margin-bottom:auto;
+    /* margin-bottom:auto; */
     /* text-decoration-color: none;  */
 }
 
@@ -77,6 +77,8 @@
 
 .NavUserName {
     display: flex;
+    margin-top:-5%;
+       margin-left: 5%;
     /* justify-content: ; */
     /* margin-top: auto; */
     /* margin-bottom:auto; */
@@ -84,7 +86,7 @@
 
 .NavUserEmail {
     /* margin-top: auto; */
-    /* margin-bottom:auto; */
+    margin-bottom:auto;
 }
 
 .NavOptions2 > a {
@@ -97,14 +99,23 @@
     color:#157BD0;
 }
 
+.NavOptions2 > a:active {
+    color:#157BD0;
+}
+
+.main-active-active {
+    color:#157BD0;
+}
+
+
 .NavOptions2 {
     font-family: Montserrat, sans-serif;
     text-align: start;
-    margin-top: 21rem;
-    /* margin-left: 5%; */
-    /* margin-top: 0%; */
-    /* font-size: 118%; */
+    margin-top: auto;
+    margin-left: 5%;
+    font-size: 98%;
     text-decoration: none;
-    margin-bottom:auto;
+    max-height: 10%;
+    /* margin-bottom:auto; */
 }
 

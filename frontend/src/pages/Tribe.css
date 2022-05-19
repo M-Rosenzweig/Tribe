@@ -1,13 +1,16 @@
 .TribeMain {
     background-image: url(../images/Tribal.jpg) ;
     background-size: auto;
+    /* background-size: auto;  */
     color: white;
     display: grid;
     grid-template-rows: 4.5% auto 35vh;
+    height:auto;
 }
 
 .TribeDeets{
     /* background-color: aqua; */
+
 }
 
 .TribeNamesDropDown {

@@ -87,7 +87,7 @@ function App() {
      <Route path="/login" element={<Login />}/>
      <Route path="/signUp" element={<SignUp />}/>
      <Route path="/myMind" element={user.id !== '' && <MyMind user={user} tribes={user.s_tribes} />}/>
-     <Route path="/chat" element={user.id !== '' && <Chat user={user} tribes={user.s_tribes} />}/>
+    <Route path="/chat" element={user.id !== '' && <Chat user={user} tribes={user.s_tribes} />}/>
 
      <Route path="/myBooks" element={<MyBooks />}/>
      <Route path="/friendsBooks" element={<FriendsBooks />}/>

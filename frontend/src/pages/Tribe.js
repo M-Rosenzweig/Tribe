@@ -51,10 +51,9 @@ function Tribe({ user, tribes }) {
 
       <div className='TribeMembers'>
 
-      {user.energy !== '' && <MemberCard member={user}/>}  
+      {/* {user.energy !== '' && <MemberCard member={user}/>}   */}
 
-        {tribeMembers.filter(member => member.id !== user.id)
-        .map(member => <MemberCard key={member.id} member={member}/>)}
+        {tribeMembers.map(member => <MemberCard key={member.id} member={member}/>)}
       </div>
 
       <div className='InviteMember'>

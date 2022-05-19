@@ -31,17 +31,17 @@ function MemberCard({ member }) {
   },[])
 
   return (
-    <div className='MemberCard' >
+    <div id={energy} className='MemberCard scale-in-center' >
         
-      <h1> {member.username}</h1> 
+      <h2> {member.username}</h2> 
 
       <div id='tribePageEnergy' className={energyClassName}>
        {energy}
       </div> 
 
        <div className='MemberCardBox' >
-        <p>P(5) </p>
-        <p>W(3) </p>
+        <p>P(3) </p>
+        <p>W(2) </p>
        </div>
  
 

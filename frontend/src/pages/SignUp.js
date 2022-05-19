@@ -81,7 +81,7 @@ function handleCreateTribe(e) {
       energy:2,
       online:'offline',
   
-      //Tribe Info
+    //Tribe Info
       name: tribeName,
       code: uuidv4()
     })
