@@ -86,10 +86,16 @@ function handleCreateTribe(e) {
       code: uuidv4()
     })
   })
-  .then(resp => resp.json())
+  .then((resp) => {
+    if (resp.ok) {
+      window.location.href = "/my-tribes";
+      alert(`Welcome ${email}. ${tribeName} has been formed.`);
+      // navigate("/login");
+      return resp.json();
+    }
+    alert("Something went wrong. Please try again ");
+  })
   .then(data => console.log(data))
-  window.location.href = "/my-tribes";
-
 }
 
 function handleJoinTribe(e){
@@ -115,10 +121,16 @@ function handleJoinTribe(e){
       code: tribePasscode
     })
   })
-  .then(resp => resp.json())
+  .then((resp) => {
+    if (resp.ok) {
+      window.location.href = "/my-tribes";
+      alert(`Welcome ${email} to the tribe.`);
+      // navigate("/login");
+      return resp.json();
+    }
+    alert("Incorrect Code. Please try again ");
+  })
   .then(data => console.log(data))
-  window.location.href = "/my-tribes";
-
 }
   // alert('Hello - depending on errors or not send message')
 
@@ -131,7 +143,7 @@ function handleJoinTribe(e){
     <div id="signupparent">
       <div id="signupbox">
         <h1 id='SignUpTitle'>Tribe</h1> 
-        <h2>Life Is Better With Your Tribe</h2>
+        <h2 className='LifeIsBetter'>Life Is Better With Your Tribe</h2>
         <button id={selected ? 'SelectedBox' : null} className='SignUpButton' onClick={handleClickCreate}>Create A Tribe</button>
         <button id={selected ? null : "SelectedBox"} className='SignUpButton' onClick={handleClickJoin}>Join A Tribe</button>
         <div id="signups">
@@ -143,7 +155,7 @@ function handleJoinTribe(e){
   
         </div>
         {/* <Link to="/login"> */}
-          <button id="signupbutton" className='signupinput' >{placeholder ? "Create" : "Join Tribe" }</button>
+          <button id="signupbutton2" className='ww' >{placeholder ? "Create" : "Join Tribe" }</button>
           {/* </Link> */}
 
         <div id="login">

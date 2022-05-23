@@ -82,7 +82,7 @@ function App() {
      <Nav username={user.username} email={user.email} setUserFunction={setUserFunction} />
 
      <Routes>
-     <Route path="/my-tribes" element={<Tribe user={user} tribes={user.s_tribes} />}/>
+     <Route path="/my-tribes" element={user.id !== '' && <Tribe user={user} tribes={user.s_tribes} />}/>
      <Route exact path="/" element={<Login />}/>
      <Route path="/login" element={<Login />}/>
      <Route path="/signUp" element={<SignUp />}/>

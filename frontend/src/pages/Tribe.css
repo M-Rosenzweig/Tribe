@@ -1,11 +1,12 @@
 .TribeMain {
-    background-image: url(../images/Tribal.jpg) ;
-    background-size: auto;
+    /* background-image: url(../images/Tribal.jpg) ; */
+  background: linear-gradient(#0C1B3F, #342138);
+    background-size: cover;
     /* background-size: auto;  */
     color: white;
     display: grid;
     grid-template-rows: 4.5% auto 35vh;
-    height:auto;
+    /* height:auto; */
 }
 
 .TribeDeets{

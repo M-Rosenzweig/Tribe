@@ -48,15 +48,15 @@ function Nav({username, email, setUserFunction}) {
      {/* <h2 className='NavWelcome'>Welcome User </h2>  */}
 
       <div className='NavOptions'>
-     <h2> <NavLink  to="/my-tribes" activeClassName="active"><FaCampground/> My Tribes</NavLink> </h2>  
-     <h2> <NavLink to='/chat' activeClassName="active"> <BsChatSquare/> Chat  </NavLink>  </h2>  
-     <h2> <NavLink to='/MyMind' activeClassName="active"> <FiCoffee/> On My Mind </NavLink> </h2>
-     <h2> <NavLink  to="/myBooks" activeClassName="active"> <GiBookshelf/> My Shelf</NavLink>  </h2> 
-     <h2> <NavLink to='/voting'  activeClassName="active"><BsBoxSeam/> Resources </NavLink> </h2>  
+     <h2> <NavLink  to="/my-tribes" activeclassname="active"><FaCampground/> My Tribes</NavLink> </h2>  
+     <h2> <NavLink to='/chat' activeclassname="active"> <BsChatSquare/> Chat  </NavLink>  </h2>  
+     <h2> <NavLink to='/MyMind' activeclassname="active"> <FiCoffee/> On My Mind </NavLink> </h2>
+     <h2> <NavLink  to="/myBooks" activeclassname="active"> <GiBookshelf/> My Shelf</NavLink>  </h2> 
+     <h2> <NavLink to='/voting'  activeclassname="active"><BsBoxSeam/> Resources </NavLink> </h2>  
      <h2>
-     <NavLink to='/voting' activeClassName="active"><GiCampfire/> Governance </NavLink> 
+     <NavLink to='/voting' activeclassname="active"><GiCampfire/> Governance </NavLink> 
     </h2> 
-     <h2> <NavLink to='/voting'  activeClassName="active"><RiSailboatLine/> Challenges </NavLink>  </h2> 
+     <h2> <NavLink to='/voting'  activeclassname="active"><RiSailboatLine/> Challenges </NavLink>  </h2> 
     
      
 
@@ -67,7 +67,7 @@ function Nav({username, email, setUserFunction}) {
 
 
      <div className='NavOptions2'> 
-     <NavLink to='/login'> <h2 activeClassName="active" className='Logout' onClick={handleShowProfile}> {username ? <CgProfile/> : null} {username}</h2></NavLink>
+     <NavLink to='/login'> <h2 activeclassname="active" className='Logout' onClick={handleShowProfile}> {username ? <CgProfile/> : null} {username}</h2></NavLink>
      {/* <h3 className='NavUserEmail'>Welcome, {username}</h3> */}
      <NavLink to='/login'> <h2 className='Logout' onClick={handleLogout}> {username ? <MdLogout/> : null} { username ? "Logout" : null}</h2> </NavLink>
     <NavLink to='/login'><h2 className='Login' onClick={handleLogin}> {username ? null : <MdLogout/> } { username ? null : "Login"}</h2> </NavLink>

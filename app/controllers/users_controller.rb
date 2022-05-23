@@ -5,8 +5,8 @@ class UsersController < ApplicationController
     end
 
     def new_tribe
-        user = User.create!(create_user_params)
-        tribe = STribe.create(stribes_params)
+        user = User.create!( params.permit(:username, :password, :energy, :email, :online))
+        tribe = STribe.create(params.permit(:name, :code))
         bond = Bond.create(user:user, s_tribe:tribe)
         session[:user_id] = user.id
         render json: user, status: :created
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     end
 
     def join_tribe
-        user = User.create!(create_user_params)
+        user = User.create!(params.permit(:username, :password, :energy, :email, :online))
         tribe = STribe.find_by(code: params[:code])
         bond = Bond.create(user_id:user.id, s_tribe_id:tribe.id)
         session[:user_id] = user.id

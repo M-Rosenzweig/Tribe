@@ -1,9 +1,9 @@
 .LoginMaster {
   display: grid;
   grid-template-rows: 25% auto;
-  background-image: url(../images/Fire.gif);
+  background-image: url(../images/FireCropped.gif);
   height: 100vh;
-  background-size: cover;
+  background-size:cover;
 }
 
 .LoginHeadings {
@@ -11,13 +11,14 @@
 }
 
 #LoginTitle {
-  font-size: 600%;
+  font-size: 490%;
   margin-bottom: 0;
   margin-top: 3%;
 }
 
 #LoginSubtitle {
-  margin-top: -0.2%;
+  /* margin-top: -0.2%; */
+  font-size: larger;
 }
 
 .LoginForm {
@@ -29,7 +30,8 @@
 }
 
 #loginbox {
-  margin-top: 10vh;
+  /* background-color: aliceblue; */
+  margin-top: 8vh;
   padding: 4vh;
   height: 50vh;
   width: 50vw;
@@ -83,9 +85,11 @@
 
 #sarea {
   font-weight: bold;
-  background-color: gray;
-  margin-left:19%;
-  font-size: auto;
+  min-width: 5vw;
+  margin-top:25%;
+  /* background-color: gray; */
+  margin-left:15%;
+  font-size: small;
   color: rgb(83, 228, 54);
   text-decoration: none;
   text-decoration-color: none;

@@ -1,6 +1,8 @@
 .myMindMaster {
-  background-image: url(../images/Tribal.jpg);
+  /* background-image: url(../images/Tribal.jpg); */
   /* background-image: url(../images/Tribb.jpg); */
+  background: linear-gradient(#0C1B3F, #342138);
+
   background-repeat: repeat;
   color: white;
   display: grid;
