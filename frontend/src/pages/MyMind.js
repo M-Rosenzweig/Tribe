@@ -26,7 +26,7 @@ function MyMind({ user, tribes }) {
 
   useEffect(() => {
     // getting the users worries from backend and setting it to state
-    fetch(`/user_worries/${ID}`).then((resp) => {
+    fetch(`/api/user_worries/${ID}`).then((resp) => {
       if (resp.ok) {
         resp.json().then((data) => {
           setUserWorries(data);
@@ -37,7 +37,7 @@ function MyMind({ user, tribes }) {
 
   useEffect(() => {
     // getting the users priorites from backend and setting it to state
-    fetch(`/user_priorities/${ID}`).then((resp) => {
+    fetch(`/api/user_priorities/${ID}`).then((resp) => {
       if (resp.ok) {
         resp.json().then((data) => {
           setUserPriorites(data);
@@ -48,7 +48,7 @@ function MyMind({ user, tribes }) {
 
   useEffect(() => {
     // getting the users current energy from backend
-    fetch(`/energy/${ID}`).then((resp) => {
+    fetch(`/api/energy/${ID}`).then((resp) => {
       if (resp.ok) {
         resp.json().then((energyData) => {
           // console.log(energyData)
@@ -85,7 +85,7 @@ function MyMind({ user, tribes }) {
   function handleEnergyShift() {
     setFlip(!flip)
 
-    fetch(`/update/${ID}`, {
+    fetch(`/api/update/${ID}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -121,7 +121,7 @@ function MyMind({ user, tribes }) {
       user_id: ID,
       s_tribe_id: tribeID,
     };
-    fetch(`/priorities`, {
+    fetch(`/api/priorities`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -141,7 +141,7 @@ function MyMind({ user, tribes }) {
       user_id: ID,
       s_tribe_id: tribeID,
     };
-    fetch(`/worries`, {
+    fetch(`/api/worries`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -168,7 +168,7 @@ function MyMind({ user, tribes }) {
 
   function handleFeelingDelete(id) {
     console.log(user.id);
-    fetch(`/priorities/${id}`, {
+    fetch(`/api/priorities/${id}`, {
       method: "DELETE",
     })
       .then((resp) => resp.json())
@@ -179,7 +179,7 @@ function MyMind({ user, tribes }) {
 
   function handleWorriesStateRefresh(id) {
     console.log(id);
-    fetch(`/user_worries/${id}`).then((resp) => {
+    fetch(`/api/user_worries/${id}`).then((resp) => {
       if (resp.ok) {
         resp.json().then((data) => {
           setUserWorries(data);
@@ -189,7 +189,7 @@ function MyMind({ user, tribes }) {
   }
 
   function handleWorryDelete(id) {
-    fetch(`/worries/${id}`, {
+    fetch(`/api/worries/${id}`, {
       method: "DELETE",
     })
       .then((resp) => resp.json())

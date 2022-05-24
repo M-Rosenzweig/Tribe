@@ -24,8 +24,8 @@ function Login() {
 
   function handleLogin(e) {
     e.preventDefault();
-    setEmail("");
-    setPassword("");
+    // setEmail("");
+    // setPassword("");
 
     fetch("/api/sessions", {
       method: "POST",
@@ -104,7 +104,7 @@ function Login() {
               <button
                 id="loginbutton"
                 className="logininput"
-                onClick={handleLogin}
+                // onClick={handleLogin}
               >
                 Login
               </button>

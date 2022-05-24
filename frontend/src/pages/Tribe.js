@@ -19,7 +19,7 @@ function Tribe({ user, tribes }) {
   }
 
   function fetchAndPopulate(TribeId){
-    fetch("/s_tribes/" + TribeId)
+    fetch("/api/s_tribes/" + TribeId)
     .then(resp => resp.json())
     .then(data => {
       setTribeMembers(data.users)

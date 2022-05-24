@@ -17,7 +17,7 @@ function Nav({username, email, setUserFunction}) {
   
 
   function handleLogout() {
-    fetch("/logout", { method: "DELETE" }).then((r) => {
+    fetch("/api/logout", { method: "DELETE" }).then((r) => {
       if (r.ok) {
         setUserFunction( 
           {
