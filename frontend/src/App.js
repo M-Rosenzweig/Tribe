@@ -45,7 +45,7 @@ function App() {
 
   useEffect(() => {
     // auto-login
-    fetch("/me").then((resp) => {
+    fetch("/api/me").then((resp) => {
       if (resp.ok) {
         resp.json().then((userData) => setUser(userData))
         // .then(handleTribeDetails());

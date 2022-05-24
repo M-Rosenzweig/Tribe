@@ -27,7 +27,7 @@ function Login() {
     setEmail("");
     setPassword("");
 
-    fetch("/sessions", {
+    fetch("/api/sessions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +39,7 @@ function Login() {
     })
       .then((resp) => {
         if (resp.ok) {
-          window.location.href = "http://localhost:4000/my-tribes";
+          window.location.href = "/my-tribes";
           alert(`Welcome ${email}  `);
           navigate("/my-tribes");
           return resp.json();

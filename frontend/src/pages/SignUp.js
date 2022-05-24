@@ -69,7 +69,7 @@ function handleCreateTribe(e) {
   setPassword('')
   setTribeName('')
 
-  fetch("/new_tribe", {
+  fetch("/api/new_tribe", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -105,7 +105,7 @@ function handleJoinTribe(e){
   setPassword('')
   setTribeName('')
 
-  fetch("/join_tribe", {
+  fetch("/api/join_tribe", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

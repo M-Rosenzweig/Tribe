@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-# namespace :api do
+namespace :api do
   resources :books
   resources :worries
   resources :priorities
@@ -28,12 +28,12 @@ Rails.application.routes.draw do
 
   delete "/logout", to: "sessions#destroy"
 
-# end
+end
 
 #   # get '*path', to: "application#fallback_index_html", constraints: ->(request) do
 #   #   !request.xhr? && request.format.html?
 
-#   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
   
 
 end
