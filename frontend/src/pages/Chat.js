@@ -71,7 +71,7 @@ function Chat({ user, tribes }) {
 
   useEffect(() => {
     // getting the users worries from backend and setting it to state
-    fetch(`/user_worries/${memberID}`).then((resp) => {
+    fetch(`/api/user_worries/${memberID}`).then((resp) => {
       if (resp.ok) {
         resp.json().then((data) => {
           setUserWorries(data);
@@ -82,7 +82,7 @@ function Chat({ user, tribes }) {
 
   useEffect(() => {
     // getting the users priorites from backend and setting it to state
-    fetch(`/user_priorities/${memberID}`).then((resp) => {
+    fetch(`/api/user_priorities/${memberID}`).then((resp) => {
       if (resp.ok) {
         resp.json().then((data) => {
           setUserPriorites(data);
@@ -95,7 +95,7 @@ function Chat({ user, tribes }) {
 
   useEffect(() => {
     // getting the users current energy from backend
-    fetch(`/energy/${memberID}`).then((resp) => {
+    fetch(`/api/energy/${memberID}`).then((resp) => {
       if (resp.ok) {
         resp.json().then((energyData) => {
           setEnergy(energyData);
@@ -142,7 +142,7 @@ function Chat({ user, tribes }) {
   }, []);
   // when current tribe changes then this needs to change to acomadate the new tribe id fetch
   function fetchAndPopulateMessages(TribeId) {
-    fetch(`/messages/${TribeId}`)
+    fetch(`/api/messages/${TribeId}`)
       .then((resp) => resp.json())
       .then((data) => {
         setTribeMessages(data);
@@ -152,7 +152,7 @@ function Chat({ user, tribes }) {
   }
 
   function fetchAndPopulate(TribeId) {
-    fetch(`/s_tribes/ ${TribeId}`)
+    fetch(`/api/s_tribes/ ${TribeId}`)
       .then((resp) => resp.json())
       .then((data) => {
         setTribeMembers(data.users);
@@ -166,7 +166,7 @@ function Chat({ user, tribes }) {
 
   function toggleTheUserEnergy() {
 
-    fetch(`/update/${memberID}`, {
+    fetch(`/api/update/${memberID}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -194,7 +194,7 @@ function Chat({ user, tribes }) {
     // console.log(checkMessages);
     setMessageText("");
 
-    fetch("/messages", {
+    fetch("/api/messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
