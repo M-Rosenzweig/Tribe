@@ -19,6 +19,11 @@ function AppComingSoon() {
         <h2 className="TribeNameSoon">Tribe</h2>
         <p className="StrongerSoon"> Stronger Together </p>
       </div>
+
+      <div>
+        Tribe is a platform
+      </div>
+
       <div className="OptionsMobile slide-in-bottom ">
         <div className="IndividualButton">
           <FaCampground />

@@ -32,7 +32,9 @@
 }
 
 .OptionsMobile {
-    /* background-color: aqua; */
+    /* background-color: rgb(100, 173, 173); */
+    background: linear-gradient(#3e8ccc, #ADD8FF);
+
     display: flex;
     justify-content: space-around;
     margin-top:auto;
@@ -47,6 +49,7 @@
     width: 13%;
     text-align: center;
     height:fit-content;
+    margin-top:1%;
 }
 
 #ChatButton {
