@@ -1,11 +1,9 @@
 import React, {useState} from "react";
 import "./AppComingSoon.css";
 import { RiSailboatLine } from "react-icons/ri";
-import { MdLogout } from "react-icons/md";
 import { BsChatSquare } from "react-icons/bs";
 import { FaCampground } from "react-icons/fa";
 import { FiCoffee } from "react-icons/fi";
-import { GiBookshelf } from "react-icons/gi";
 import { BsBoxSeam } from "react-icons/bs";
 import { GiCampfire } from "react-icons/gi";
 
@@ -21,8 +19,11 @@ function AppComingSoon() {
       </div>
 
       <div>
-        Tribe is a platform
+        <h1>My Tribes</h1>
+        <p>Tribe Members are look out for each other and no one is left. Easily Slide into your different Tribes dependant on goal and focus of each group. </p>
       </div>
+
+      <div className="AppleAppStore"></div>
 
       <div className="OptionsMobile slide-in-bottom ">
         <div className="IndividualButton">
