@@ -8,11 +8,23 @@ import Chat from "./pages/Chat"
 import MyBooks from "./pages/MyBooks"
 import FriendsBooks from "./pages/FriendsBooks"
 import Voting from "./pages/Voting"
+import AppComingSoon from "./pages/AppComingSoon";
 import './App.css'
 import { Route, Routes } from "react-router-dom";
 
 
 function App() {
+
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 420);
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 420);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  });
 
   const [user, setUser] = useState({
     username:"",
@@ -77,27 +89,36 @@ function App() {
 
 
   return (
-    <div id="AppMain" className="App">
+    <> 
+    {isDesktop ? (
+        <div id="AppMain" className="App">
     
-     <Nav username={user.username} email={user.email} setUserFunction={setUserFunction} />
-
-     <Routes>
-     <Route path="/my-tribes" element={user.id !== '' && <Tribe user={user} tribes={user.s_tribes} />}/>
-     <Route exact path="/" element={<Login />}/>
-     <Route path="/login" element={<Login />}/>
-     <Route path="/signUp" element={<SignUp />}/>
-     <Route path="/myMind" element={user.id !== '' && <MyMind user={user} tribes={user.s_tribes} />}/>
-    <Route path="/chat" element={user.id !== '' && <Chat user={user} tribes={user.s_tribes} />}/>
-
-     <Route path="/myBooks" element={<MyBooks />}/>
-     <Route path="/friendsBooks" element={<FriendsBooks />}/>
-     <Route path="/voting" element={<Voting />}/>
-
-
-     </Routes>
-      
-    </div>
+        <Nav username={user.username} email={user.email} setUserFunction={setUserFunction} />
+   
+        <Routes>
+        <Route path="/my-tribes" element={user.id !== '' && <Tribe user={user} tribes={user.s_tribes} />}/>
+        <Route exact path="/" element={<Login />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/signUp" element={<SignUp />}/>
+        <Route path="/myMind" element={user.id !== '' && <MyMind user={user} tribes={user.s_tribes} />}/>
+       <Route path="/chat" element={user.id !== '' && <Chat user={user} tribes={user.s_tribes} />}/>
+   
+        <Route path="/myBooks" element={<MyBooks />}/>
+        <Route path="/friendsBooks" element={<FriendsBooks />}/>
+        <Route path="/voting" element={<Voting />}/>
+   
+   
+        </Routes>
+         
+       </div>
+      ) : (
+       <AppComingSoon/>
+      )}
+    
+  </>
   );
+ 
+
 }
 
 export default App;

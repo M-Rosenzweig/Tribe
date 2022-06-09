@@ -1,0 +1,36 @@
+.MasterAppSoon {
+    background-image: url(../images/MobileCrop.gif);
+    background-size:cover;
+    width:100vw;
+    height: 100vh;
+    display: grid; 
+    grid-template-rows: 25vh auto;
+}
+
+.TribeApp {
+    /* background-color: aliceblue; */
+    color:white;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.StrongerSoon {
+    /* color:red; */
+    /* background-color: green; */
+    margin-top:0%;
+
+}
+
+.TribeNameSoon {
+    /* margin-left:auto; */
+    font-size: 490%;
+    margin-bottom: 0%;
+    margin-top:0%;
+    
+}
+
+.TitleAppDetails {
+    /* background-color: aqua; */
+}
