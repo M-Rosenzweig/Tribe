@@ -5,11 +5,11 @@
     height: 100vh;
     display: grid; 
     grid-template-rows: 25vh auto;
+    color:white;
 }
 
 .TribeApp {
     /* background-color: aliceblue; */
-    color:white;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -31,6 +31,29 @@
     
 }
 
-.TitleAppDetails {
+.OptionsMobile {
     /* background-color: aqua; */
+    display: flex;
+    justify-content: space-around;
+    margin-top:auto;
+    height: 8vh;
 }
+
+.IndividualButton {
+    background-color: #53A3EC;
+    font-size: 235%;
+    padding: 1.6% 1.6% 0% 1.6%;
+    border-radius: 18px;
+    width: 13%;
+    text-align: center;
+    height:fit-content
+}
+
+#ChatButton {
+    font-size: 220%;
+    padding: 2.5% 2.5% 0% 2.5%;
+    width:11.5%;
+}
+
+
+
