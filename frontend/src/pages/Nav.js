@@ -7,7 +7,7 @@ import { MdLogout } from "react-icons/md";
  import { GiBookshelf} from "react-icons/gi"
  import { BsBoxSeam} from "react-icons/bs"
  import { GiCampfire} from "react-icons/gi"
- import {  CgProfile } from "react-icons/cg"
+ import { CgProfile } from "react-icons/cg"
  import {NavLink} from "react-router-dom";
 import './Nav.css'
 
