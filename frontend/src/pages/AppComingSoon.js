@@ -39,7 +39,7 @@ function AppComingSoon() {
     <div className="MasterAppSoon">
       <div className="TribeApp">
         <h2 className="TribeNameSoon">Tribe</h2>
-        <p className="StrongerSoon"> Stronger Together </p>
+        {/* <p className="StrongerSoon"> Stronger Together </p> */}
       </div>
 
       <div id="SwitchUpComponent ">
@@ -52,6 +52,10 @@ function AppComingSoon() {
       <div className="MasterAppStore">
         <div className="AppleAppStore"></div>
         <div className="AppleAppStore2"></div>
+      </div>
+
+      <div>
+      <p className="StrongerSoon"> Stronger Together </p>
       </div>
 
       <div className="OptionsMobile slide-in-bottom ">

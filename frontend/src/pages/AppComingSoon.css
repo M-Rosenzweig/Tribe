@@ -4,7 +4,7 @@
     width:100vw;
     height: 100vh;
     display: grid; 
-    grid-template-rows: 25vh 49vh auto;
+    grid-template-rows: 20vh 40vh 26vh 4vh auto;
     color:white;
 }
 
@@ -17,11 +17,16 @@
 }
 
 .StrongerSoon {
-    color:#FB9678;
-    /* background-color: black; */
-    margin-top:0%;
-    opacity: 85%;
+    background: -webkit-linear-gradient(#3e8ccc, #ADD8FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    
+    /* opacity: 90%; */
+}
 
+.StrongerSoon2 {
+  text-align: center;
 }
 
 .TribeNameSoon {
