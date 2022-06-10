@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "./AppComingSoon.css";
-import PreviewChat from "../components/PreviewChat"
+// import PreviewChat from "../components/PreviewChat"
 import PreviewTribe from "../components/PreviewTribe";
-import { RiSailboatLine } from "react-icons/ri";
 import { BsChatSquare } from "react-icons/bs";
 import { FaCampground } from "react-icons/fa";
 import { FiCoffee } from "react-icons/fi";
 import { BsBoxSeam } from "react-icons/bs";
 import { GiCampfire } from "react-icons/gi";
 
+
 function AppComingSoon() {
   const [active, setActive] = useState('Tribe');
-  const [trigger, setTrigger] = useState(1);
-  // state that maybe says something like 1234 and
-  //when it is 1 we show tribe and when it is 2 we
-  //show etc as well as onclick of each button we set the
-  //number id to change it
-  useEffect(() => {
-    switch (trigger) {
+  const [trigger, setTrigger] = useState(true);
+  
+
+  function handleActiveSetter(number) {
+    setTrigger(!trigger)
+    switch (number) {
       case 1:
         setActive('Tribe')
         break;
@@ -34,7 +33,7 @@ function AppComingSoon() {
                 setActive('Governance')
                 break;
     }
-  }, []);
+  }
 
   return (
     <div className="MasterAppSoon">
@@ -43,9 +42,10 @@ function AppComingSoon() {
         <p className="StrongerSoon"> Stronger Together </p>
       </div>
 
-      <div id="SwitchUpComponent" className={active}>
+      <div id="SwitchUpComponent ">
        <PreviewTribe
        active={active}
+       trigger={trigger}
        />
       </div>
 
@@ -55,19 +55,19 @@ function AppComingSoon() {
       </div>
 
       <div className="OptionsMobile slide-in-bottom ">
-        <div className="IndividualButton">
+        <div className="IndividualButton" onClick={()=> handleActiveSetter(1)}>
           <FaCampground />
         </div>
-        <div className="IndividualButton">
+        <div className="IndividualButton" onClick={()=> handleActiveSetter(2)}>
           <FiCoffee />
         </div>
-        <div id="ChatButton" className="IndividualButton">
+        <div id="ChatButton" className="IndividualButton" onClick={()=> handleActiveSetter(3)}>
           <BsChatSquare />
         </div>
-        <div className="IndividualButton">
+        <div className="IndividualButton" onClick={()=> handleActiveSetter(4)}>
           <BsBoxSeam />
         </div>
-        <div className="IndividualButton">
+        <div className="IndividualButton" onClick={()=> handleActiveSetter(5)}>
           <GiCampfire />
         </div>
       </div>
