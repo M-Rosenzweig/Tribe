@@ -1,5 +1,7 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./AppComingSoon.css";
+import PreviewChat from "../components/PreviewChat"
+import PreviewTribe from "../components/PreviewTribe";
 import { RiSailboatLine } from "react-icons/ri";
 import { BsChatSquare } from "react-icons/bs";
 import { FaCampground } from "react-icons/fa";
@@ -7,24 +9,50 @@ import { FiCoffee } from "react-icons/fi";
 import { BsBoxSeam } from "react-icons/bs";
 import { GiCampfire } from "react-icons/gi";
 
-
 function AppComingSoon() {
-  // const [active, setActive] = useState("")
+  const [active, setActive] = useState('Tribe');
+  const [trigger, setTrigger] = useState(1);
+  // state that maybe says something like 1234 and
+  //when it is 1 we show tribe and when it is 2 we
+  //show etc as well as onclick of each button we set the
+  //number id to change it
+  useEffect(() => {
+    switch (trigger) {
+      case 1:
+        setActive('Tribe')
+        break;
+        case 2:
+          setActive('Energy')
+          break;
+          case 3:
+            setActive('Chat')
+            break;
+            case 4:
+              setActive('Resources')
+              break;
+              case 5:
+                setActive('Governance')
+                break;
+    }
+  }, []);
+
   return (
     <div className="MasterAppSoon">
-      {/* <div className='TitleApp'> */}
       <div className="TribeApp">
         <h2 className="TribeNameSoon">Tribe</h2>
         <p className="StrongerSoon"> Stronger Together </p>
       </div>
 
-      <div>
-        <h1>My Tribes</h1>
-        {/* <p>Tribe Members look out for each other and no one is left. Easily Slide into your different Tribes dependant on goal and focus of each group. </p> */}
-        <p> A Tribe is much more than a group - it is a unit that holds each other accountable, shares resources, and makes sure no one is left behind. Join a Tribe or found one.</p>
+      <div id="SwitchUpComponent" className={active}>
+       <PreviewTribe
+       active={active}
+       />
       </div>
 
-      <div className="AppleAppStore"></div>
+      <div className="MasterAppStore">
+        <div className="AppleAppStore"></div>
+        <div className="AppleAppStore2"></div>
+      </div>
 
       <div className="OptionsMobile slide-in-bottom ">
         <div className="IndividualButton">

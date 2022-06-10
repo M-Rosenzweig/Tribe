@@ -4,7 +4,7 @@
     width:100vw;
     height: 100vh;
     display: grid; 
-    grid-template-rows: 25vh auto;
+    grid-template-rows: 25vh 49vh auto;
     color:white;
 }
 
@@ -58,50 +58,91 @@
     width:11.5%;
 }
 
-.slide-in-bottom {
-	-webkit-animation: slide-in-bottom 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-bottom 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.TitleSwitchComponent {
+  text-align: center;
 }
 
-@-webkit-keyframes slide-in-bottom {
-    0% {
-      -webkit-transform: translateY(1000px);
-              transform: translateY(1000px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  @keyframes slide-in-bottom {
-    0% {
-      -webkit-transform: translateY(1000px);
-              transform: translateY(1000px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      opacity: 1;
-    }
+
+
+  .MasterAppStore {
+    display: flex;
+    /* justify-content: center; */
+    margin-top:auto;
+    align-items: center;
   }
 
   .AppleAppStore {
     /* background-color: white;  */
+    background-color: black;
     margin-left:auto;
     margin-right:auto;
     margin-top: auto;
     margin-bottom: auto;
-    width: 50vw;
-    height: 7vh;
-    background-image: url(../images/ResizedApple.png);
+    width: 40vw;
+    height: 4vh;
+    /* background-image: url(../images/ResizedApple.png); */
     background-size: cover;
     /* padding: 10%; */
     border-radius: 25px;
     padding: 2%;
   }
+
+  .AppleAppStore2 {
+        /* background-color: white;  */
+        background-color: black;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 40vw;
+        height: 4vh;
+        /* background-image: url(../images/ResizedApple.png); */
+        background-size: cover;
+        /* padding: 10%; */
+        border-radius: 25px;
+        padding: 2%;
+
+    /* border: 1px solid black; */
+    /* background-image: url(../images/PlayStore.png); */
+    /* background-size: cover;
+    width: 50vw;
+    height: 7vh;
+    background-color: black;
+    border-radius: 25x;
+    margin-right:auto; */
+  }
+
+
+  .slide-in-bottom {
+    -webkit-animation: slide-in-bottom 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-bottom 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @-webkit-keyframes slide-in-bottom {
+      0% {
+        -webkit-transform: translateY(1000px);
+                transform: translateY(1000px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes slide-in-bottom {
+      0% {
+        -webkit-transform: translateY(1000px);
+                transform: translateY(1000px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
   
 
 
