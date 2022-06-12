@@ -47,8 +47,9 @@ function PreviewTribe({active, trigger}) {
       {/* 'TitleSwitchComponent' */}
     <h1 className={trigger ? "slide-in-left TitleSwitchComponent" : "slide-in-right TitleSwitchComponent"}>{title}</h1>
     {/* <p>Tribe Members look out for each other and no one is left. Easily Slide into your different Tribes dependant on goal and focus of each group. </p> */}
-    <p className='PreviewText'> {textInfo}</p>
+    <p className={trigger ? 'slide-in-left PreviewText' : 'slide-in-right PreviewText ' }> {textInfo}</p>
   </div>
+  // PreviewText
   )
 }
 
