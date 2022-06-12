@@ -56,6 +56,12 @@
     text-align: center;
     height:fit-content;
     margin-top:1%;
+    /* color:#FB9678; */
+}
+
+#SelectedButton {
+    color:#FB9678;
+
 }
 
 #ChatButton {

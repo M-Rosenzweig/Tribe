@@ -10,9 +10,9 @@ function PreviewTribe({active, trigger}) {
   let energyTitle = "Energy"
   let energyInfo = "Live share your priorities and blockers and get live interactive feedback in the chat."
   let chatTitle = "Chat"
-  let chatInfo = "View Tribe members priorities and Blockers. View their energy and easily update your own."
+  let chatInfo = "View tribe members priorities and blockers and Chat about them in real time! View their energy and easily update your own."
   let resourcesTitle= "Resources"
-  let resourcesInfo = "Share you top resources and links and place them in the appropriate Box for other members to find."
+  let resourcesInfo = "Share your top resources and links and place them in the appropriate Box for other members to find."
   let governanceTitle = "Governance"
   let governanceInfo = "All tribe members are equal. Governance facilitates the democratic voting and security decisions of the tribe "
 

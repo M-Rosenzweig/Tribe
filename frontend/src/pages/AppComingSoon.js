@@ -59,19 +59,19 @@ function AppComingSoon() {
       </div>
 
       <div className="OptionsMobile slide-in-bottom ">
-        <div className="IndividualButton" onClick={()=> handleActiveSetter(1)}>
+        <div id={active === 'Tribe' ? "SelectedButton" : ''} className="IndividualButton" onClick={()=> handleActiveSetter(1)}>
           <FaCampground />
         </div>
-        <div className="IndividualButton" onClick={()=> handleActiveSetter(2)}>
+        <div id={active === 'Energy' ? "SelectedButton" : ''} className="IndividualButton" onClick={()=> handleActiveSetter(2)}>
           <FiCoffee />
         </div>
-        <div id="ChatButton" className="IndividualButton" onClick={()=> handleActiveSetter(3)}>
+        <div id={active === 'Chat' ? "SelectedButton" : ''} className="IndividualButton" onClick={()=> handleActiveSetter(3)}>
           <BsChatSquare />
         </div>
-        <div className="IndividualButton" onClick={()=> handleActiveSetter(4)}>
+        <div id={active === 'Resources' ? "SelectedButton" : ''} className="IndividualButton" onClick={()=> handleActiveSetter(4)}>
           <BsBoxSeam />
         </div>
-        <div className="IndividualButton" onClick={()=> handleActiveSetter(5)}>
+        <div id={active === 'Governance' ? "SelectedButton" : ''} className="IndividualButton" onClick={()=> handleActiveSetter(5)}>
           <GiCampfire />
         </div>
       </div>
