@@ -12,11 +12,10 @@ function AppComingSoon() {
   const [active, setActive] = useState("Tribe");
   const [trigger, setTrigger] = useState(true);
 
-  screen.lockOrientation("portrait-primary");
 
-  // useEffect(() => {
-  //   document.body.style.overflow = "hidden";
-  // }, []);
+  useEffect(() => {
+  screen.lockOrientation("portrait-primary");
+  }, []);
 
   function handleActiveSetter(number) {
     setTrigger(!trigger);
