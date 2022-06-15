@@ -13,9 +13,9 @@ function AppComingSoon() {
   const [trigger, setTrigger] = useState(true);
 
 
-  useEffect(() => {
-  screen.lockOrientation("portrait-primary");
-  }, []);
+  // useEffect(() => {
+  // screen.lockOrientation("portrait-primary");
+  // }, []);
 
   function handleActiveSetter(number) {
     setTrigger(!trigger);

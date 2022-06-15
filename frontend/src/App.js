@@ -15,10 +15,10 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
 
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 770);
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 470);
 
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 770);
+    setDesktop(window.innerWidth > 470);
   };
 
   useEffect(() => {
