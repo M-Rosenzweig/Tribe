@@ -39,25 +39,7 @@ function AppComingSoon() {
 
   return (
     <div className="MasterAppSoon">
-      <div className="TribeApp">
-        <h2 className="TribeNameSoon">Tribe</h2>
-        {/* <p className="StrongerSoon"> Stronger Together </p> */}
-      </div>
-
-      <div id="SwitchUpComponent ">
-        <PreviewTribe active={active} trigger={trigger} />
-      </div>
-
-      <div className="MasterAppStore">
-        <div className="AppleAppStore"></div>
-        <div className="AppleAppStore2"></div>
-      </div>
-
-      <div>
-        <p className="StrongerSoon"> Stronger Together </p>
-      </div>
-
-      <div className="OptionsMobile slide-in-bottom ">
+            <div className="OptionsMobile slide-in-left ">
         <div
           id={active === "Tribe" ? "SelectedButton" : ""}
           className="IndividualButton"
@@ -94,6 +76,25 @@ function AppComingSoon() {
           <GiCampfire />
         </div>
       </div>
+      <div className="TribeApp">
+        <h2 className="TribeNameSoon">Tribe</h2>
+        {/* <p className="StrongerSoon"> Stronger Together </p> */}
+      </div>
+
+      <div id="SwitchUpComponent ">
+        <PreviewTribe active={active} trigger={trigger} />
+      </div>
+
+      <div className="MasterAppStore">
+        <div className="AppleAppStore"></div>
+        <div className="AppleAppStore2"></div>
+      </div>
+
+      <div>
+        <p className="StrongerSoon">{trigger ? 'Stronger Together' : 'Now live on Desktop'}  </p>
+      </div>
+
+
 
       {/* </div> */}
     </div>
