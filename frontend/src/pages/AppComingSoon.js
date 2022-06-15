@@ -12,9 +12,9 @@ function AppComingSoon() {
   const [active, setActive] = useState("Tribe");
   const [trigger, setTrigger] = useState(true);
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-  }, []);
+  // useEffect(() => {
+  //   document.body.style.overflow = "hidden";
+  // }, []);
 
   function handleActiveSetter(number) {
     setTrigger(!trigger);
