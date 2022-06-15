@@ -4,7 +4,7 @@
     width:100vw;
     height: 100vh;
     display: grid; 
-    grid-template-rows: 11.5vh 18vh 56vh 10vh auto;
+    grid-template-rows: 11.5vh 18vh 56vh 8.5vh auto;
     color:white;
 }
 
