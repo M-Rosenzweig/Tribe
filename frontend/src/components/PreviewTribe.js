@@ -16,6 +16,9 @@ function PreviewTribe({active, trigger}) {
   let governanceTitle = "Governance"
   let governanceInfo = "All tribe members are equal. Governance facilitates the democratic voting and security decisions of the tribe "
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+  }, [active]);
 
   useEffect(() => {
     switch (active) {
