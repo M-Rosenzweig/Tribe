@@ -91,7 +91,7 @@ function AppComingSoon() {
       </div>
 
       <div>
-        <p className="StrongerSoon">{trigger ? 'Stronger Together' : 'Now live on Desktop'}  </p>
+        <p className="StrongerSoon">{trigger ? 'Now live on Desktop' : 'Stronger Together'}  </p>
       </div>
 
 
