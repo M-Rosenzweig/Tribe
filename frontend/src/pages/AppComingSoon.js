@@ -12,6 +12,8 @@ function AppComingSoon() {
   const [active, setActive] = useState("Tribe");
   const [trigger, setTrigger] = useState(true);
 
+  screen.lockOrientation("portrait-primary");
+
   // useEffect(() => {
   //   document.body.style.overflow = "hidden";
   // }, []);
@@ -39,7 +41,7 @@ function AppComingSoon() {
 
   return (
     <div className="MasterAppSoon">
-            <div className="OptionsMobile slide-in-left ">
+            <div className="OptionsMobile slide-in-left">
         <div
           id={active === "Tribe" ? "SelectedButton" : ""}
           className="IndividualButton"
