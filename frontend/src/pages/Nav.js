@@ -12,9 +12,9 @@ import { MdLogout } from "react-icons/md";
 import './Nav.css'
 
 
-function Nav({username, email, setUserFunction}) {
+function Nav({ user, username, email, setUserFunction}) {
 
-  
+
 
   function handleLogout() {
     fetch("/api/logout", { method: "DELETE" }).then((r) => {
@@ -39,6 +39,10 @@ function Nav({username, email, setUserFunction}) {
     console.log('create a profile page')
   }
 
+  function loginPlz() {
+    // alert('Please Login')
+  }
+
 
 
   return (
@@ -46,17 +50,17 @@ function Nav({username, email, setUserFunction}) {
       <h1 className='NavTitle'>🏕️ Tribe</h1>
       {/* <p className='NavUserName'>Welcome {username}</p> */}
      {/* <h2 className='NavWelcome'>Welcome User </h2>  */}
-
+     {/* onClick={ user == '' ? loginPlz() : null} */}
       <div className='NavOptions'>
-     <h2> <NavLink  to="/my-tribes" activeclassname="active"><FaCampground/> My Tribes</NavLink> </h2>  
+     <h2> <NavLink to={user == '' ? "login" : 'my-tribes'} activeclassname="active"><FaCampground/> My Tribes</NavLink> </h2>  
      <h2> <NavLink to='/chat' activeclassname="active"> <BsChatSquare/> Chat  </NavLink>  </h2>  
      <h2> <NavLink to='/MyMind' activeclassname="active"> <FiCoffee/> On My Mind </NavLink> </h2>
-     <h2> <NavLink  to="/myBooks" activeclassname="active"> <GiBookshelf/> My Shelf</NavLink>  </h2> 
-     <h2> <NavLink to='/Resources'  activeclassname="active"><BsBoxSeam/> Resources </NavLink> </h2>  
+     {/* <h2> <NavLink  to="/myBooks" activeclassname="active"> <GiBookshelf/> My Shelf</NavLink>  </h2>  */}
+     <h2> <NavLink to='/resources'  activeclassname="active"><BsBoxSeam/> Resources </NavLink> </h2>  
      <h2>
-     <NavLink to='/Governance' activeclassname="active"><GiCampfire/> Governance </NavLink> 
+     <NavLink to='/governance' activeclassname="active"><GiCampfire/> Governance </NavLink> 
     </h2> 
-     <h2> <NavLink to='/Challenges'  activeclassname="active"><RiSailboatLine/> Challenges </NavLink>  </h2> 
+     <h2> <NavLink to='/challenges'  activeclassname="active"><RiSailboatLine/> Challenges </NavLink>  </h2> 
     
      
 

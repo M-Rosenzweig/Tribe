@@ -48,9 +48,9 @@ function Chat({ user, tribes }) {
   //   document.getElementById('bottom').scrollIntoView();
   // },[])
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-  }, []);
+  // useEffect(() => {
+  //   document.body.style.overflow = "hidden";
+  // }, []);
 
   // let broadcastObject = {
   //   room: tribes[0].id,
@@ -214,9 +214,9 @@ function Chat({ user, tribes }) {
       });
   }
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
+  // const scrollToBottom = () => {
+  //   messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  // }
 
   
   // const scrollToBottomInitial = () => {

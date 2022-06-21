@@ -5,20 +5,19 @@ import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
 import MyMind from "./pages/MyMind"
 import Chat from "./pages/Chat"
-import MyBooks from "./pages/MyBooks"
-import FriendsBooks from "./pages/FriendsBooks"
 import Voting from "./pages/Voting"
 import AppComingSoon from "./pages/AppComingSoon";
+import Resources from './pages/Resources'
 import './App.css'
 import { Route, Routes } from "react-router-dom";
 
 
 function App() {
 
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 900);
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 730);
 
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 900);
+    setDesktop(window.innerWidth > 700);
   };
 
   useEffect(() => {
@@ -93,18 +92,19 @@ function App() {
     {isDesktop ? (
         <div id="AppMain" className="App">
     
-        <Nav username={user.username} email={user.email} setUserFunction={setUserFunction} />
+        <Nav user={user.id} username={user.username} email={user.email} setUserFunction={setUserFunction} />
    
         <Routes>
-        <Route path="/my-tribes" element={user.id !== '' && <Tribe user={user} tribes={user.s_tribes} />}/>
+        <Route path="/my-tribes" element={user.id !== '' ? <Tribe user={user} tribes={user.s_tribes} /> : <Login/>}/>
         <Route exact path="/" element={<Login />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/signUp" element={<SignUp />}/>
-        <Route path="/myMind" element={user.id !== '' && <MyMind user={user} tribes={user.s_tribes} />}/>
-       <Route path="/chat" element={user.id !== '' && <Chat user={user} tribes={user.s_tribes} />}/>
+        <Route path="/myMind" element={user.id !== '' ? <MyMind user={user} tribes={user.s_tribes} /> : <Login/>}/>
+        <Route path="/chat" element={user.id !== '' ? <Chat user={user} tribes={user.s_tribes} /> : <Login/>}/>
+        <Route path="/governance" element={user.id !== '' ? <Voting/> : <Login/>}/>
+        <Route path="/resources" element={user.id !== '' ? <Resources/> : <Login/>}/>
+        <Route path="/challenges" element={user.id !== '' ? <Voting/> : <Login/>}/>
    
-        <Route path="/myBooks" element={<MyBooks />}/>
-        <Route path="/friendsBooks" element={<FriendsBooks />}/>
         <Route path="/voting" element={<Voting />}/>
    
    
