@@ -52,11 +52,11 @@ function Nav({username, email, setUserFunction}) {
      <h2> <NavLink to='/chat' activeclassname="active"> <BsChatSquare/> Chat  </NavLink>  </h2>  
      <h2> <NavLink to='/MyMind' activeclassname="active"> <FiCoffee/> On My Mind </NavLink> </h2>
      <h2> <NavLink  to="/myBooks" activeclassname="active"> <GiBookshelf/> My Shelf</NavLink>  </h2> 
-     <h2> <NavLink to='/voting'  activeclassname="active"><BsBoxSeam/> Resources </NavLink> </h2>  
+     <h2> <NavLink to='/Resources'  activeclassname="active"><BsBoxSeam/> Resources </NavLink> </h2>  
      <h2>
-     <NavLink to='/voting' activeclassname="active"><GiCampfire/> Governance </NavLink> 
+     <NavLink to='/Governance' activeclassname="active"><GiCampfire/> Governance </NavLink> 
     </h2> 
-     <h2> <NavLink to='/voting'  activeclassname="active"><RiSailboatLine/> Challenges </NavLink>  </h2> 
+     <h2> <NavLink to='/Challenges'  activeclassname="active"><RiSailboatLine/> Challenges </NavLink>  </h2> 
     
      
 
