@@ -18,7 +18,7 @@ function Login() {
   }
 
   // function alertVibes(data) {
-  // //  data ?  alert('You are now logged in!') :
+  // //  data ?  alert('You are now logged in!') :+
   //   console.log(data);
   // }
 

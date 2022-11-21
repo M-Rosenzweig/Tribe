@@ -30,9 +30,6 @@ namespace :api do
 
 end
 
-#   # get '*path', to: "application#fallback_index_html", constraints: ->(request) do
-#   #   !request.xhr? && request.format.html?
-
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
   
 
